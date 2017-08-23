@@ -94,7 +94,12 @@ gulp.task('develop', ['build'], function(){
     browserSync.init({ // initalize Browsersync
         // set what files be served
         server: {
-            baseDir: 'dist' // serve from this folder
+            baseDir: 'dist', // serve from this folder
+            serveStaticOptions: {
+                // trying a extension when one isn't specified:
+                // effectively means that http://localhost:3000/another-page shows another-page.html
+                extensions: ['html']
+            }
         }
     });
     gulp.watch('src/scss/**/*', ['css:compile']); // watch for changes in scss
