@@ -57,11 +57,9 @@ _Warning: [Twig.js doesn't implement 100% of Twig](https://github.com/twigjs/twi
 If you need some data to be available in all templates, use `templates/data.json` for that.
 
 
-## Static files
+## Static files (JavaScript, images, …)
 
-Only main CSS and it's sourcemap is generated.
-
-All other folders and files are just copied from `/src/static/` directly to `/dist/` folder.
+Folders and files from `/src/static/` are just copied directly to `/dist/` folder.
 
 
 ### Libraries
