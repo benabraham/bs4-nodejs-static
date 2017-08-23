@@ -22,16 +22,25 @@ gulp.task('csscompile', ['cssclean'], function(){
         .src('src/scss/index.scss') // this is the source of for compilation
         .pipe(sass().on('error', sass.logError)) // compile sass to css and also tell us about a problem if happens
         .pipe(sourcemaps.init()) // initalizes a sourcemap
-        .pipe(postcss([autoprefixer( // supported browsers (from Bootstrap 4 alpha 6)
-            'Chrome >= 35',
-            'Firefox >= 38',
+        .pipe(postcss([autoprefixer( // supported browsers (from Bootstrap 4 beta: https://github.com/twbs/bootstrap/blob/v4-dev/build/postcss.config.js)
+            //
+            // Official browser support policy:
+            // https://v4-alpha.getbootstrap.com/getting-started/browsers-devices/#supported-browsers
+            //
+            'Chrome >= 45', // Exact version number here is kinda arbitrary
+            'Firefox ESR',
+            // Note: Edge versions in Autoprefixer & Can I Use refer to the EdgeHTML rendering engine version,
+            // NOT the Edge app version shown in Edge's "About" screen.
+            // For example, at the time of writing, Edge 20 on an up-to-date system uses EdgeHTML 12.
+            // See also https://github.com/Fyrd/caniuse/issues/1928
             'Edge >= 12',
             'Explorer >= 10',
-            'iOS >= 8',
-            'Safari >= 8',
-            'Android 2.3',
-            'Android >= 4',
-            'Opera >= 12'
+            // Out of leniency, we prefix these 1 version further back than the official policy.
+            'iOS >= 9',
+            'Safari >= 9',
+            // The following remain NOT officially supported, but we're lenient and include their prefixes to avoid severely breaking in them.
+            'Android >= 4.4',
+            'Opera >= 30'
         ), require('postcss-flexbugs-fixes')]))
         .pipe(csso()) // compresses CSS
         .pipe(sourcemaps.write('.')) // writes the sourcemap
