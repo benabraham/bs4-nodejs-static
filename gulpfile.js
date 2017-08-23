@@ -2,7 +2,7 @@
 var gulp = require('gulp');
 
 var browserSync = require('browser-sync').create();
-var clean = require('gulp-clean');
+var del = require('del');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var postcss = require('gulp-postcss');
@@ -12,12 +12,15 @@ var twig = require('gulp-twig');
 var fs = require('fs');
 
 // a task to delete all css files in dist folder
-gulp.task('cssclean', function(){
-    return gulp.src(['dist/*.css', 'dist/*.map'], { read: false }).pipe(clean());
+gulp.task('css:clean', function(){
+    return del([
+        'dist/*.css',
+        'dist/*.map'
+    ], { force: true });
 });
 
 // CSS compilation (also deletes css files first using previously defined task)
-gulp.task('csscompile', ['cssclean'], function(){
+gulp.task('css:compile', ['css:clean'], function(){
     return gulp
         .src('src/scss/index.scss') // this is the source of for compilation
         .pipe(sass().on('error', sass.logError)) // compile sass to css and also tell us about a problem if happens
@@ -49,12 +52,12 @@ gulp.task('csscompile', ['cssclean'], function(){
 });
 
 // delete all html files in dist folder
-gulp.task('htmlclean', function(){
-    return gulp.src(['dist/**/*.html'], { read: false }).pipe(clean());
+gulp.task('html:clean', function(){
+    return del(['dist/**/*.html'], { force: true });
 });
 
 // HTML compilation from templates
-gulp.task('htmlcompile', ['htmlclean'], function(){
+gulp.task('html:compile', ['html:clean'], function(){
     return gulp.src('src/templates/**/*.twig')
     // compile twig templates to html files
         .pipe(twig({ data: JSON.parse(fs.readFileSync('src/templates/data.json')) })) // import from data.json
@@ -65,34 +68,38 @@ gulp.task('htmlcompile', ['htmlclean'], function(){
 });
 
 // delete all files from src except css
-gulp.task('staticclean', function(){
-    return gulp.src([
+gulp.task('static:clean', function(){
+    return del([
         'dist/**/*',
         '!dist/**/*.html',
         '!dist/**/*.css',
         '!dist/**/*.map'
-    ], { read: false }).pipe(clean());
+    ], { force: true });
 });
 
 // copy everything except scss from src folder
-gulp.task('staticcopy', ['staticclean'], function(){
-    return gulp.src(['src/static/**/*']).pipe(gulp.dest('dist'));
+gulp.task('static:copy', ['static:clean'], function(){
+    return gulp.src(['src/static/**/*'])
+        .pipe(gulp.dest('dist'))
+        .on('end', function(){ // after copying finishes…
+            browserSync.reload() // … tell Browsersync to reload
+        });
 });
 
 // build everything
-gulp.task('build', ['csscompile', 'htmlcompile', 'staticcopy']);
+gulp.task('build', ['css:compile', 'html:compile', 'static:copy']);
 
 // development with automatic refreshing
 gulp.task('develop', ['build'], function(){
     browserSync.init({ // initalize Browsersync
         // set what files be served
         server: {
-            baseDir: './dist/' // serve from this folder
+            baseDir: 'dist' // serve from this folder
         }
     });
-    gulp.watch('src/scss/**/*', ['csscompile']); // watch for changes in scss
-    gulp.watch('src/templates/**/*', ['htmlcompile']); // watch for changes in templates
-    gulp.watch(['src/static/**/*'], ['staticcopy']); // watch for changes in static files
+    gulp.watch('src/scss/**/*', ['css:compile']); // watch for changes in scss
+    gulp.watch('src/templates/**/*', ['html:compile']); // watch for changes in templates
+    gulp.watch(['src/static/**/*'], ['static:copy']); // watch for changes in static files
 });
 
 // set develop as a default task (gulp runs this when you don't specify a task)
