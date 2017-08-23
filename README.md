@@ -75,4 +75,4 @@ See `gulpfile.js` for supported browsers.
 
 ### Deployment
 
-Upload everything in `/dist/` folder on a server.
+Upload everything in `/dist/` folder to the server.
