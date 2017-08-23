@@ -55,22 +55,14 @@ All other folders and files are just copied from `/src/static/` directly to `/di
 
 ### Libraries
 
-This website is made with Bootstrap 4 beta.
+This website is made with [Bootstrap 4 beta](https://getbootstrap.com/).
  
 You can comment out components you don't need in `/src/index.scss`.
 
-`/src/_custom-bootstrap-variables.scss` contains all BS variables, some are customized.
+`/src/_custom-bootstrap-variables.scss` contains only customized Bootstrap variables.
 
-`/src/_base.scss` is for custom CSS, should you need any
- 
 See `gulpfile.js` for supported browsers.
 
-
-### Design
-
-Should work from 320px browser window width up.
-
-`/assignment/` folder contains all source files
 
 ### Deployment
 
