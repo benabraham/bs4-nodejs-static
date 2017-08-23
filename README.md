@@ -1,4 +1,4 @@
-# A basic template to develop a website based on Bootstrap 4 
+# A basic template to develop a website based on Bootstrap 4
 
 ## First time installation
 
@@ -35,9 +35,20 @@ To build everything once (in `/dist/` folder)
 gulp build
 ```
 
-## Templates
+## CSS (Sass preprocessor)
 
-You can leverage power of [Twig.js](https://github.com/twigjs/twig.js/) templates (JavaScript impementation of Twig templating language).
+`index.css` is compiled from `src/scss/index.scss` by [Sass](http://sass-lang.com/).
+
+In the case you don't know _Scss_ syntax or don't want to use it just type plain CSS in `src/scss/_base.scss`.
+
+
+## HTML (Twig templates)
+
+HTML is generated from [Twig.js](https://github.com/twigjs/twig.js/) templates (JavaScript impementation of Twig templating language) in `src/templates`.
+
+You don't need to leverage the power of templates. You can just create plain HTML files with `*.twig` extension.  
+
+Start templates that are not pages with `_`. Typically these are templates used for _include_ or _extend_.
 
 Documentation for [Twig](https://twig.symfony.com/doc/2.x/templates.html).
 
@@ -49,7 +60,7 @@ If you need some data to be available in all templates, use `templates/data.json
 ## Static files
 
 Only main CSS and it's sourcemap is generated.
- 
+
 All other folders and files are just copied from `/src/static/` directly to `/dist/` folder.
 
 
