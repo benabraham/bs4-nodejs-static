@@ -53,12 +53,12 @@ gulp.task('css:compile', ['css:clean'], function(){
 
 // delete all html files in dist folder
 gulp.task('html:clean', function(){
-    return del(['dist/**/*.html'], { force: true });
+    return del('dist/**/*.html', { force: true });
 });
 
 // HTML compilation from templates
 gulp.task('html:compile', ['html:clean'], function(){
-    return gulp.src('src/templates/**/*.twig')
+    return gulp.src('src/templates/**/[^_]*.twig')
     // compile twig templates to html files
         .pipe(twig({ data: JSON.parse(fs.readFileSync('src/templates/data.json')) })) // import from data.json
         .pipe(gulp.dest('./dist/')) // where to put compiled html
@@ -79,7 +79,7 @@ gulp.task('static:clean', function(){
 
 // copy everything except scss from src folder
 gulp.task('static:copy', ['static:clean'], function(){
-    return gulp.src(['src/static/**/*'])
+    return gulp.src('src/static/**/*')
         .pipe(gulp.dest('dist'))
         .on('end', function(){ // after copying finishes…
             browserSync.reload() // … tell Browsersync to reload
@@ -99,7 +99,7 @@ gulp.task('develop', ['build'], function(){
     });
     gulp.watch('src/scss/**/*', ['css:compile']); // watch for changes in scss
     gulp.watch('src/templates/**/*', ['html:compile']); // watch for changes in templates
-    gulp.watch(['src/static/**/*'], ['static:copy']); // watch for changes in static files
+    gulp.watch('src/static/**/*', ['static:copy']); // watch for changes in static files
 });
 
 // set develop as a default task (gulp runs this when you don't specify a task)
