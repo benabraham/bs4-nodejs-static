@@ -11,6 +11,8 @@ var csso = require('gulp-csso');
 var twig = require('gulp-twig');
 var fs = require('fs');
 
+// Now define some tasks
+
 // a task to delete all css files in dist folder
 gulp.task('css:clean', function(){
     return del([
@@ -67,17 +69,16 @@ gulp.task('html:compile', ['html:clean'], function(){
         });
 });
 
-// delete all files from src except css
 gulp.task('static:clean', function(){
     return del([
-        'dist/**/*',
-        '!dist/**/*.html',
-        '!dist/**/*.css',
-        '!dist/**/*.map'
+        'dist/**/*', // delete all files from src
+        '!dist/**/*.html', // except css
+        '!dist/**/*.css', // (and it's sourcemap)
+        '!dist/**/*.map' // and html files
     ], { force: true });
 });
 
-// copy everything except scss from src folder
+// copy everything static folder
 gulp.task('static:copy', ['static:clean'], function(){
     return gulp.src('src/static/**/*')
         .pipe(gulp.dest('dist'))
