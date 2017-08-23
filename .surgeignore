@@ -1,0 +1,4 @@
+# Don't upload these files to server
+# see https://surge.sh/help/ignoring-files-and-directories
+
+*.map

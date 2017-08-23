@@ -10,6 +10,7 @@ var autoprefixer = require('autoprefixer');
 var csso = require('gulp-csso');
 var twig = require('gulp-twig');
 var fs = require('fs');
+var surge = require('gulp-surge');
 
 // Now define some tasks
 
@@ -106,6 +107,14 @@ gulp.task('develop', ['build'], function(){
     gulp.watch('src/scss/**/*', ['css:compile']); // watch for changes in scss
     gulp.watch('src/templates/**/*', ['html:compile']); // watch for changes in templates
     gulp.watch('src/static/**/*', ['static:copy']); // watch for changes in static files
+});
+
+// deployment to surge.sh
+gulp.task('deploy', ['build'], function(){
+	return surge({
+		project: 'dist',
+		domain: 'https://my-first-website.surge.sh'
+	})
 });
 
 // set develop as a default task (gulp runs this when you don't specify a task)
