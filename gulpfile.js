@@ -111,10 +111,10 @@ gulp.task('develop', ['build'], function(){
 
 // deployment to surge.sh
 gulp.task('deploy', ['build'], function(){
-	return surge({
-		project: 'dist',
-		domain: 'https://my-first-website.surge.sh'
-	})
+    return surge({
+        project: 'dist',
+        domain: 'https://my-first-website.surge.sh'
+    })
 });
 
 // set develop as a default task (gulp runs this when you don't specify a task)
