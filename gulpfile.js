@@ -73,9 +73,9 @@ gulp.task('html:compile', ['html:clean'], function(){
 gulp.task('static:clean', function(){
     return del([
         'dist/**/*', // delete all files from src
-        '!dist/**/*.html', // except css
-        '!dist/**/*.css', // (and it's sourcemap)
-        '!dist/**/*.map' // and html files
+        '!dist/**/*.html', // except html files
+        '!dist/**/*.css', // css and
+        '!dist/**/*.map' // and sourcemaps
     ], { force: true });
 });
 
