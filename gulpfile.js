@@ -70,6 +70,7 @@ gulp.task('html:compile', ['html:clean'], function(){
         });
 });
 
+// Static files cleanup
 gulp.task('static:clean', function(){
     return del([
         'dist/**/*', // delete all files from src
@@ -79,7 +80,7 @@ gulp.task('static:clean', function(){
     ], { force: true });
 });
 
-// copy everything static folder
+// copy everything to static folder
 gulp.task('static:copy', ['static:clean'], function(){
     return gulp.src('src/static/**/*')
         .pipe(gulp.dest('dist'))
