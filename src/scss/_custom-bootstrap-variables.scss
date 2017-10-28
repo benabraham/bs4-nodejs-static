@@ -2,7 +2,7 @@
 // you can use and override any variable from \node_modules\bootstrap\scss\_variables.scss here
 
 %custom-bootstrap-variables {
-    @import "./node_modules/bootstrap/scss/functions.scss";
+    @import "./node_modules/bootstrap/scss/functions";
     @import "./node_modules/bootstrap/scss/variables";
     $enable-rounded: false !global;
 
