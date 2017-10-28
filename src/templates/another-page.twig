@@ -15,5 +15,17 @@
                 <p>Back to <a href="/">homepage</a></p>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12 mt-5">
+                <h2>Color samples</h2>
+                <p>These color samples are generated from data provided in <code>data.json</code> file.</p>
+            </div>
+            {% for color in sampleColors %}
+                <div class="col mb-4">
+                    {{ color.name }}
+                    <div style="background-color: {{ color.value }};" class="w-100 py-5"></div>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}
