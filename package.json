@@ -3,19 +3,19 @@
   "version": "1.0.0",
   "main": "index.js",
   "devDependencies": {
-    "autoprefixer": "^7.1.1",
+    "autoprefixer": "^7.1.6",
     "bootstrap": "^4.0.0-beta",
-    "browser-sync": "^2.18.7",
+    "browser-sync": "^2.18.13",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-csso": "^3.0.0",
     "gulp-postcss": "^7.0.0",
     "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.4.1",
+    "gulp-sourcemaps": "^2.6.1",
     "gulp-surge": "^0.1.0",
-    "gulp-twig": "^0.7.0",
+    "gulp-twig": "^1.1.1",
     "gulp-watch": "^4.3.11",
-    "postcss-flexbugs-fixes": "^3.0.0"
+    "postcss-flexbugs-fixes": "^3.2.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
