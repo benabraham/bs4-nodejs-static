@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "devDependencies": {
-    "autoprefixer": "^7.1.6",
+    "autoprefixer": "^7.2.2",
     "bootstrap": "^4.0.0-beta",
     "browser-sync": "^2.18.13",
     "del": "^3.0.0",
