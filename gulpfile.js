@@ -26,8 +26,8 @@ gulp.task('css:clean', function(){
 gulp.task('css:compile', ['css:clean'], function(){
     return gulp
         .src('src/scss/index.scss') // this is the source of for compilation
-        .pipe(sass().on('error', sass.logError)) // compile sass to css and also tell us about a problem if happens
         .pipe(sourcemaps.init()) // initalizes a sourcemap
+        .pipe(sass().on('error', sass.logError)) // compile sass to css and also tell us about a problem if happens
         .pipe(postcss([autoprefixer( // supported browsers (from Bootstrap 4 beta: https://github.com/twbs/bootstrap/blob/v4-dev/build/postcss.config.js)
             //
             // Official browser support policy:
@@ -49,7 +49,7 @@ gulp.task('css:compile', ['css:clean'], function(){
             'Opera >= 30'
         ), require('postcss-flexbugs-fixes')]))
         .pipe(csso()) // compresses CSS
-        .pipe(sourcemaps.write('.')) // writes the sourcemap
+        .pipe(sourcemaps.write('./dist')) // writes the sourcemap
         .pipe(gulp.dest('./dist')) // destination of the resulting css
         .pipe(browserSync.stream()); // tell browsersync to reload CSS (injects compiled CSS)
 });
