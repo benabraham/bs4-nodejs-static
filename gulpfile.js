@@ -49,7 +49,7 @@ gulp.task('css:compile', ['css:clean'], function(){
             'Opera >= 30'
         ), require('postcss-flexbugs-fixes')]))
         .pipe(csso()) // compresses CSS
-        .pipe(sourcemaps.write('./dist')) // writes the sourcemap
+        .pipe(sourcemaps.write('./')) // writes the sourcemap
         .pipe(gulp.dest('./dist')) // destination of the resulting css
         .pipe(browserSync.stream()); // tell browsersync to reload CSS (injects compiled CSS)
 });
