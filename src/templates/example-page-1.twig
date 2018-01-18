@@ -1,0 +1,25 @@
+{% extends '_base.twig' %}
+
+
+{% block title %}Example page 1{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <img class="img-fluid" src="/img/dummy.png" alt="dummy image in png format">
+            </div>
+            <div class="col p-4">
+                <h1>Example page 1</h1>
+                <p>This page features 2 images in different formats.</p>
+                <p>Back to the <a href="/">homepage</a></p>
+                <p>Or see more at <a href="example-page-2">Example page 2</a></p>
+            </div>
+
+            <div class="col">
+                <img class="img-fluid" src="/img/dummy.jpg" alt="dummy image in jpg format">
+            </div>
+        </div>
+    </div>
+{% endblock %}
