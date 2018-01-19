@@ -35,7 +35,7 @@
     // $black: #000 !global;
 
     // $grays: () !global;
-    // $grays: map-merge((
+    // $grays: (
     //         "100": $gray-100,
     //         "200": $gray-200,
     //         "300": $gray-300,
@@ -45,7 +45,7 @@
     //         "700": $gray-700,
     //         "800": $gray-800,
     //         "900": $gray-900
-    // ), $grays);
+    // ) !global;
 
     // $blue: #007bff !global;
     // $indigo: #6610f2 !global;
@@ -59,7 +59,7 @@
     // $cyan: #17a2b8 !global;
 
     // $colors: () !global;
-    // $colors: map-merge((
+    // $colors: (
     //         "blue": $blue,
     //         "indigo": $indigo,
     //         "purple": $purple,
@@ -73,7 +73,7 @@
     //         "white": $white,
     //         "gray": $gray-600,
     //         "gray-dark": $gray-800
-    // ), $colors);
+    // ) !global;
 
     // $primary: $blue !global;
     // $secondary: $gray-600 !global;
@@ -85,7 +85,7 @@
     // $dark: $gray-800 !global;
 
     // $theme-colors: () !global;
-    // $theme-colors: map-merge((
+    // $theme-colors: (
     //         "primary": $primary,
     //         "secondary": $secondary,
     //         "success": $success,
@@ -94,7 +94,7 @@
     //         "danger": $danger,
     //         "light": $light,
     //         "dark": $dark
-    // ), $theme-colors);
+    // ) !global;
     // stylelint-enable
 
     // Set a specific jump point for requesting color jumps
@@ -129,23 +129,23 @@
     // stylelint-disable
     // $spacer: 1rem !global;
     // $spacers: () !global;
-    // $spacers: map-merge((
+    // $spacers: (
     //         0: 0,
     //         1: ($spacer * .25),
     //         2: ($spacer * .5),
     //         3: $spacer,
     //         4: ($spacer * 1.5),
     //         5: ($spacer * 3)
-    // ), $spacers);
+    // ) !global;
 
     // This variable affects the `.h-*` and `.w-*` classes.
     // $sizes: () !global;
-    // $sizes: map-merge((
+    // $sizes: (
     //         25: 25%,
     //         50: 50%,
     //         75: 75%,
     //         100: 100%
-    // ), $sizes);
+    // ) !global;
     // stylelint-enable
 
     // Body
