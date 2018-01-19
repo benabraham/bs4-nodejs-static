@@ -28,7 +28,7 @@
     // $gray-300: #dee2e6 !global;
     // $gray-400: #ced4da !global;
     // $gray-500: #adb5bd !global;
-    // $gray-600: #868e96 !global;
+    // $gray-600: #6c757d !global;
     // $gray-700: #495057 !global;
     // $gray-800: #343a40 !global;
     // $gray-900: #212529 !global;
@@ -116,7 +116,7 @@
     // $enable-shadows: false !global;
     // $enable-gradients: false !global;
     // $enable-transitions: true !global;
-    // $enable-hover-media-query: false !global;
+    // $enable-hover-media-query: false !global; // Deprecated, no longer affects any compiled CSS
     // $enable-grid-classes: true !global;
     // $enable-print-styles: true !global;
 
@@ -126,23 +126,27 @@
     // variables. Mostly focused on spacing.
     // You can add more entries to the $spacers map, should you need more variation.
 
+    // stylelint-disable
     // $spacer: 1rem !global;
-    // $spacers: (
+    // $spacers: () !global;
+    // $spacers: map-merge((
     //         0: 0,
     //         1: ($spacer * .25),
     //         2: ($spacer * .5),
     //         3: $spacer,
     //         4: ($spacer * 1.5),
     //         5: ($spacer * 3)
-    // ) !global;
+    // ), $spacers);
 
     // This variable affects the `.h-*` and `.w-*` classes.
-    // $sizes: (
+    // $sizes: () !global;
+    // $sizes: map-merge((
     //         25: 25%,
     //         50: 50%,
     //         75: 75%,
     //         100: 100%
-    // ) !global;
+    // ), $sizes);
+    // stylelint-enable
 
     // Body
     //
@@ -157,9 +161,6 @@
 
     // $link-color: theme-color("primary") !global;
     // $link-decoration: none !global;
-    $link-decoration: underline;
-    $link-decoration: $link-decoration !global;
-
     // $link-hover-color: darken($link-color, 15%) !global;
     // $link-hover-decoration: underline !global;
 
@@ -213,7 +214,7 @@
     // $line-height-sm: 1.5 !global;
 
     // $border-width: 1px !global;
-    // $border-color: $gray-200 !global;
+    // $border-color: $gray-300 !global;
 
     // $border-radius: .25rem !global;
     // $border-radius-lg: .3rem !global;
@@ -332,7 +333,7 @@
     // $input-btn-line-height: $line-height-base !global;
 
     // $input-btn-focus-width: .2rem !global;
-    // $input-btn-focus-color: rgba(theme-color("primary"), .25) !global;
+    // $input-btn-focus-color: rgba($component-active-bg, .25) !global;
     // $input-btn-focus-box-shadow: 0 0 0 $input-btn-focus-width $input-btn-focus-color !global;
 
     // $input-btn-padding-y-sm: .25rem !global;
@@ -408,14 +409,14 @@
     // $input-border-radius-sm: $border-radius-sm !global;
 
     // $input-focus-bg: $input-bg !global;
-    // $input-focus-border-color: lighten(theme-color("primary"), 25%) !global;
+    // $input-focus-border-color: lighten($component-active-bg, 25%) !global;
     // $input-focus-color: $input-color !global;
     // $input-focus-width: $input-btn-focus-width !global;
     // $input-focus-box-shadow: $input-btn-focus-box-shadow !global;
 
     // $input-placeholder-color: $gray-600 !global;
 
-    // $input-height-border: $input-btn-border-width * 2 !global;
+    // $input-height-border: $input-border-width * 2 !global;
 
     // $input-height-inner: ($font-size-base * $input-btn-line-height) + ($input-btn-padding-y * 2) !global;
     // $input-height: calc(#{$input-height-inner} + #{$input-height-border}) !global;
@@ -454,20 +455,21 @@
     // $custom-control-indicator-disabled-bg: $gray-200 !global;
     // $custom-control-label-disabled-color: $gray-600 !global;
 
-    // $custom-control-indicator-checked-color: $white !global;
-    // $custom-control-indicator-checked-bg: theme-color("primary") !global;
+    // $custom-control-indicator-checked-color: $component-active-color !global;
+    // $custom-control-indicator-checked-bg: $component-active-bg !global;
+    // $custom-control-indicator-checked-disabled-bg: rgba(theme-color("primary"), .5) !global;
     // $custom-control-indicator-checked-box-shadow: none !global;
 
     // $custom-control-indicator-focus-box-shadow: 0 0 0 1px $body-bg, $input-btn-focus-box-shadow !global;
 
-    // $custom-control-indicator-active-color: $white !global;
-    // $custom-control-indicator-active-bg: lighten(theme-color("primary"), 35%) !global;
+    // $custom-control-indicator-active-color: $component-active-color !global;
+    // $custom-control-indicator-active-bg: lighten($component-active-bg, 35%) !global;
     // $custom-control-indicator-active-box-shadow: none !global;
 
     // $custom-checkbox-indicator-border-radius: $border-radius !global;
     // $custom-checkbox-indicator-icon-checked: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='#{$custom-control-indicator-checked-color}' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E"), "#", "%23") !global;
 
-    // $custom-checkbox-indicator-indeterminate-bg: theme-color("primary") !global;
+    // $custom-checkbox-indicator-indeterminate-bg: $component-active-bg !global;
     // $custom-checkbox-indicator-indeterminate-color: $custom-control-indicator-checked-color !global;
     // $custom-checkbox-indicator-icon-indeterminate: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3E%3Cpath stroke='#{$custom-checkbox-indicator-indeterminate-color}' d='M0 2h4'/%3E%3C/svg%3E"), "#", "%23") !global;
     // $custom-checkbox-indicator-indeterminate-box-shadow: none !global;
@@ -492,7 +494,7 @@
     // $custom-select-border-radius: $border-radius !global;
 
     // $custom-select-focus-border-color: $input-focus-border-color !global;
-    // $custom-select-focus-box-shadow: inset 0 1px 2px rgba($black, .075), $input-btn-focus-box-shadow !global;
+    // $custom-select-focus-box-shadow: inset 0 1px 2px rgba($black, .075), 0 0 5px rgba($custom-select-focus-border-color, .5) !global;
 
     // $custom-select-font-size-sm: 75% !global;
     // $custom-select-height-sm: $input-height-sm !global;
@@ -589,6 +591,8 @@
     // $navbar-padding-y: ($spacer / 2) !global;
     // $navbar-padding-x: $spacer !global;
 
+    // $navbar-nav-link-padding-x: .5rem !global;
+
     // $navbar-brand-font-size: $font-size-lg !global;
     // Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
     // $nav-link-height: ($font-size-base * $line-height-base + $nav-link-padding-y * 2) !global;
@@ -629,13 +633,15 @@
     // $pagination-border-width: $border-width !global;
     // $pagination-border-color: $gray-300 !global;
 
+    // $pagination-focus-box-shadow: $input-btn-focus-box-shadow !global;
+
     // $pagination-hover-color: $link-hover-color !global;
     // $pagination-hover-bg: $gray-200 !global;
     // $pagination-hover-border-color: $gray-300 !global;
 
-    // $pagination-active-color: $white !global;
-    // $pagination-active-bg: theme-color("primary") !global;
-    // $pagination-active-border-color: theme-color("primary") !global;
+    // $pagination-active-color: $component-active-color !global;
+    // $pagination-active-bg: $component-active-bg !global;
+    // $pagination-active-border-color: $pagination-active-bg !global;
 
     // $pagination-disabled-color: $gray-600 !global;
     // $pagination-disabled-bg: $white !global;
@@ -668,9 +674,11 @@
 
     // Tooltips
 
+    // $tooltip-font-size: $font-size-sm !global;
     // $tooltip-max-width: 200px !global;
     // $tooltip-color: $white !global;
     // $tooltip-bg: $black !global;
+    // $tooltip-border-radius: $border-radius !global;
     // $tooltip-opacity: .9 !global;
     // $tooltip-padding-y: .25rem !global;
     // $tooltip-padding-x: .5rem !global;
@@ -682,10 +690,12 @@
 
     // Popovers
 
+    // $popover-font-size: $font-size-sm !global;
     // $popover-bg: $white !global;
     // $popover-max-width: 276px !global;
     // $popover-border-width: $border-width !global;
     // $popover-border-color: rgba($black, .2) !global;
+    // $popover-border-radius: $border-radius-lg !global;
     // $popover-box-shadow: 0 .25rem .5rem rgba($black, .2) !global;
 
     // $popover-header-bg: darken($popover-bg, 3%) !global;
@@ -756,6 +766,10 @@
     // $alert-border-radius: $border-radius !global;
     // $alert-link-font-weight: $font-weight-bold !global;
     // $alert-border-width: $border-width !global;
+
+    // $alert-bg-level: -10 !global;
+    // $alert-border-level: -9 !global;
+    // $alert-color-level: 6 !global;
 
     // Progress bars
 
@@ -861,4 +875,8 @@
 
     // $pre-color: $gray-900 !global;
     // $pre-scrollable-max-height: 340px !global;
+
+    // Printing
+    // $print-page-size: a3 !global;
+    // $print-body-min-width: map-get($grid-breakpoints, "lg") !global;
 }

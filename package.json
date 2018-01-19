@@ -4,7 +4,7 @@
   "main": "index.js",
   "devDependencies": {
     "autoprefixer": "^7.2.5",
-    "bootstrap": "^4.0.0-beta.3",
+    "bootstrap": "^4.0.0",
     "browser-sync": "^2.23.5",
     "del": "^3.0.0",
     "gulp": "^4.0.0",
