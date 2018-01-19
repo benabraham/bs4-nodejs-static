@@ -64,7 +64,7 @@ Folders and files from `/src/static/` are just copied directly to `/dist/` folde
 
 ### Libraries
 
-This website is made with [Bootstrap 4 beta](https://getbootstrap.com/).
+This website is made with [Bootstrap 4](https://getbootstrap.com/).
  
 You can comment out components you don't need in `/src/index.scss`.
 
