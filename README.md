@@ -1,5 +1,19 @@
 # A basic template to develop a website based on Bootstrap 4
 
+Includes:
+
+- **Bootstrap 4**: Build responsive, mobile-first projects on the web with the world's most popular front-end component library
+- **Gulp 4**: Task runner for easily running 
+- **Sass compilation**: Most used CSS extension language.
+- **Browsersync**: Automatically reloads (or injects in case of CSS), browsers' when you change files. 
+- **Autoprefixer**: Parses CSS and adds vendor prefixes according to [caniuse.com]()
+- **Flexbugs fixes**: automatically fixes some of the [flexbugs](https://github.com/philipwalton/flexbugs) 
+- **CSSO**: CSS minifier with structural optimizations
+- **Sourcemaps** generation.
+- **Twig.js**: JavaScript implementation of the Twig PHP templating language.
+- **Surge.sh**: deploy static websites easily and for free.
+
+
 ## First time installation
 
 ### Install latest [node.js](https://nodejs.org/)
@@ -24,7 +38,7 @@ To develop with automatic compilation and browser refreshing run
 gulp
 ```
 
-And see the result on http://localhost:3000/
+And see the result on `http://localhost:3000/`
 
 
 ## Build
@@ -39,7 +53,7 @@ gulp build
 
 `index.css` is compiled from `src/scss/index.scss` by [Sass](http://sass-lang.com/).
 
-In the case you don't know _Scss_ syntax or don't want to use it just type plain CSS in `src/scss/_base.scss`.
+You don't know _Scss_ syntax or don't want to use it? Just use plain CSS in `src/scss/_base.scss`.
 
 
 ## HTML (Twig templates)
@@ -48,7 +62,7 @@ HTML is generated from [Twig.js](https://github.com/twigjs/twig.js/) templates (
 
 You don't need to leverage the power of templates. You can just create plain HTML files with `*.twig` extension.  
 
-Start templates that are not pages with `_`. Typically these are templates used for _include_ or _extend_.
+If you don't want a template to be turned into HTML file start it with `_`. Typically these are templates used for _include_ or _extend_.
 
 Documentation for [Twig](https://twig.symfony.com/doc/2.x/templates.html).
 
@@ -59,14 +73,12 @@ If you need some data to be available in all templates, use `templates/data.json
 
 ## Static files (JavaScript, images, …)
 
-Folders and files from `/src/static/` are just copied directly to `/dist/` folder.
+Folders and files from `/src/static/` are simply copied directly to `/dist/` folder.
 
 
-### Libraries
+### Bootstrap
 
-This website is made with [Bootstrap 4](https://getbootstrap.com/).
- 
-You can comment out components you don't need in `/src/index.scss`.
+You can comment out Bootstrap components you don't need in `/src/index.scss`.
 
 `/src/_custom-bootstrap-variables.scss` contains only customized Bootstrap variables.
 
