@@ -3,13 +3,13 @@
 Includes:
 
 - **Bootstrap 4**: build responsive, mobile-first projects on the web with the world's most popular front-end component library
-- **Gulp 4**: task runner for easily running 
-- **Sass compilation**: the most used CSS extension language
+- **Gulp 4**: task runner for running all of the following
+- **Sass compilation**: leverage the power of the most popular CSS extension language
+- **Sourcemaps** generation for easier Sass debugging
 - **Browsersync**: automatically reloads (or injects in case of CSS), browsers' when you change files 
 - **Autoprefixer**: parses CSS and adds vendor prefixes according to [caniuse.com]()
 - **Flexbugs fixes**: automatically fixes some of the [flexbugs](https://github.com/philipwalton/flexbugs) 
 - **CSSO**: CSS minifier with structural optimizations
-- **Sourcemaps** generation
 - **Twig.js**: JavaScript implementation of the Twig PHP templating language
 - **Surge.sh**: deploy static websites easily and for free
 
