@@ -160,7 +160,8 @@
     // Style anchor elements.
 
     // $link-color: theme-color("primary") !global;
-    // $link-decoration: none !global;
+    $link-decoration: none;
+    $link-decoration: $link-decoration !global;
     // $link-hover-color: darken($link-color, 15%) !global;
     // $link-hover-decoration: underline !global;
 
