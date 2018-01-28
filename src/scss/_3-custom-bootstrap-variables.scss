@@ -16,7 +16,7 @@
 //
 // Because of the nature of this solution,
 // not only you need to add `!global` keyword
-// after each overriden variable but also
+// after each overridden variable but also
 // define it both in local and global context
 // like this:
 //
@@ -34,7 +34,7 @@
     @import "./node_modules/bootstrap/scss/variables";
 
     // Working examples (feel free to delete them):
-    $link-decoration: underline; // local variable overriden
+    $link-decoration: underline; // local variable overridden
     $link-decoration: $link-decoration !global; // new value also made available globally
 
     $gray-700: lighten($black, 34%);

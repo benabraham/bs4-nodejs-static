@@ -16,7 +16,7 @@
 //
 // Because of the nature of this solution,
 // not only you need to add `!global` keyword
-// after each overriden variable but also
+// after each overridden variable but also
 // define it both in local and global context
 // like this:
 //
@@ -30,7 +30,7 @@
 // of how variables and variable shadowing works in Sass.
 //
 // This files provides all Bootstrap’s variables
-// ready to be overriden.
+// ready to be overridden.
 
 %custom-bootstrap-variables {
     @import "./node_modules/bootstrap/scss/functions";
