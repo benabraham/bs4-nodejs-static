@@ -1,0 +1,45 @@
+// Customize Bootstrap Variables here
+//
+// You can USE and override any variable from
+// /node_modules/bootstrap/scss/_variables.scss here
+// and also use these variables to override others.
+//
+// You can do not only this:
+// $gray-700: #575757;
+//
+// But also this:
+// $gray-700: lighten($black, 71%);
+//
+// And also this:
+// $gray-700: lighten($black, 71%);
+// $link-color: $gray-700;
+//
+// Because of the nature of this solution,
+// not only you need to add `!global` keyword
+// after each overriden variable but also
+// define it both in local and global context
+// like this:
+//
+// $redefined-bs-variable: "value";
+// $redefined-bs-variable: $redefined-bs-variable !global;
+//
+// If you want to use this method, don’t forget to change
+// @import path to this file in /src/scss/index.scss
+//
+// Note: while ugly, this is the only workaround because
+// of how variables and variable shadowing works in Sass.
+
+%custom-bootstrap-variables {
+    @import "./node_modules/bootstrap/scss/functions";
+    @import "./node_modules/bootstrap/scss/variables";
+
+    // Working examples (feel free to delete them):
+    $link-decoration: underline; // local variable overriden
+    $link-decoration: $link-decoration !global; // new value also made available globally
+
+    $gray-700: lighten($black, 34%);
+    $gray-700: $gray-700 !global;
+
+    $link-color: $gray-700;
+    $link-color: $link-color !global;
+}

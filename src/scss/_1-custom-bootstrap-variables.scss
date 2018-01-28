@@ -1,0 +1,31 @@
+// Customize Bootstrap Variables here
+//
+// You can override any variable from
+// /node_modules/bootstrap/scss/_variables.scss here
+//
+// With this most basic method you can
+// ONLY use
+// 1. literal values
+// 2. variables defined in this file,
+// i.e. you CAN'T use Bootstrap’s variables.
+//
+// You can do this:
+// $gray-700: #575757;
+// $font-size-lg: 2rem;
+//
+// But not this:
+// $gray-700: lighten($black, 34%);
+// $font-size-lg: ($font-size-base * 2);
+//
+// because $black isn’t defined yet.
+//
+// If you want to use Bootstrap’s variables
+// to override other variables, please see
+// _2-custom-bootstrap-variables.scss.
+
+// Working examples (feel free to delete them):
+$link-decoration: underline;
+
+$gray-700: #575757; // this will affect all colors defined by $gray-700 variables
+
+$link-color: $gray-700; // you can use “Bootstrap’s” variable here, because it was defined before.

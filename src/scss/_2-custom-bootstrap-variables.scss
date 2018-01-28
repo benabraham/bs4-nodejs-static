@@ -1,0 +1,41 @@
+// Customize Bootstrap Variables here
+//
+// You can USE and override any variable from
+// /node_modules/bootstrap/scss/_variables.scss here
+//
+// You can do not only this:
+// $gray-700: #b5b5b5;
+// $font-size-lg: 2rem;
+//
+// But also this:
+// $gray-700: lighten($black, 34%);
+// $font-size-lg: ($font-size-base * 2);
+//
+// Because of the nature of this solution,
+// you need to add `!global` keyword
+// after each overriden variable
+// (see example below).
+//
+// If you want to use this method, don’t forget to change
+// @import path to this file in /src/scss/index.scss
+//
+// Caveat:
+// You can’t use these custom defined variables
+// to override others. This won’t work as expected:
+//
+// $gray-700: lighten($black, 34%) !global;
+// $link-color: $gray-700 !global;
+//
+// If you need this to work i.e. if you want to use
+// variables defined by you to override other variables,
+// please see _3-custom-bootstrap-variables.scss.
+
+%custom-bootstrap-variables {
+    @import "./node_modules/bootstrap/scss/functions";
+    @import "./node_modules/bootstrap/scss/variables";
+
+    // Working examples (feel free to delete them):
+    $link-decoration: underline !global;
+
+    $gray-700: lighten($black, 34%) !global; // this will affect all colors defined by $gray-700 variables
+}
