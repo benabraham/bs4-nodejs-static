@@ -30,6 +30,9 @@ npm install -g gulp-cli
 npm install
 ```
 
+_If you’re having errors in `node-gyp`, try [installing it globally](https://github.com/nodejs/node-gyp#installation)._
+
+
 ## Development
 
 To develop with automatic compilation and browser refreshing run
