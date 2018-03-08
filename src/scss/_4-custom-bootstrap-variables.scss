@@ -481,15 +481,15 @@
     // $custom-control-indicator-active-box-shadow: none; $custom-control-indicator-active-box-shadow: $custom-control-indicator-active-box-shadow !global;
 
     // $custom-checkbox-indicator-border-radius: $border-radius; $custom-checkbox-indicator-border-radius: $custom-checkbox-indicator-border-radius !global;
-    // $custom-checkbox-indicator-icon-checked: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='#{$custom-control-indicator-checked-color}' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E"), "#", "%23"); $custom-checkbox-indicator-icon-checked: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http: $custom-checkbox-indicator-icon-checked: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http !global;
+    // $custom-checkbox-indicator-icon-checked: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='#{$custom-control-indicator-checked-color}' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E"), "#", "%23"); $custom-checkbox-indicator-icon-checked: $custom-checkbox-indicator-icon-checked !global;
 
     // $custom-checkbox-indicator-indeterminate-bg: $component-active-bg; $custom-checkbox-indicator-indeterminate-bg: $custom-checkbox-indicator-indeterminate-bg !global;
     // $custom-checkbox-indicator-indeterminate-color: $custom-control-indicator-checked-color; $custom-checkbox-indicator-indeterminate-color: $custom-checkbox-indicator-indeterminate-color !global;
-    // $custom-checkbox-indicator-icon-indeterminate: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3E%3Cpath stroke='#{$custom-checkbox-indicator-indeterminate-color}' d='M0 2h4'/%3E%3C/svg%3E"), "#", "%23"); $custom-checkbox-indicator-icon-indeterminate: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http: $custom-checkbox-indicator-icon-indeterminate: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http !global;
+    // $custom-checkbox-indicator-icon-indeterminate: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3E%3Cpath stroke='#{$custom-checkbox-indicator-indeterminate-color}' d='M0 2h4'/%3E%3C/svg%3E"), "#", "%23"); $custom-checkbox-indicator-icon-indeterminate: $custom-checkbox-indicator-icon-indeterminate !global;
     // $custom-checkbox-indicator-indeterminate-box-shadow: none; $custom-checkbox-indicator-indeterminate-box-shadow: $custom-checkbox-indicator-indeterminate-box-shadow !global;
 
     // $custom-radio-indicator-border-radius: 50%; $custom-radio-indicator-border-radius: $custom-radio-indicator-border-radius !global;
-    // $custom-radio-indicator-icon-checked: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='#{$custom-control-indicator-checked-color}'/%3E%3C/svg%3E"), "#", "%23"); $custom-radio-indicator-icon-checked: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http: $custom-radio-indicator-icon-checked: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http !global;
+    // $custom-radio-indicator-icon-checked: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='#{$custom-control-indicator-checked-color}'/%3E%3C/svg%3E"), "#", "%23"); $custom-radio-indicator-icon-checked: $custom-radio-indicator-icon-checked !global;
 
     // $custom-select-padding-y: .375rem; $custom-select-padding-y: $custom-select-padding-y !global;
     // $custom-select-padding-x: .75rem; $custom-select-padding-x: $custom-select-padding-x !global;
@@ -502,7 +502,7 @@
     // $custom-select-disabled-bg: $gray-200; $custom-select-disabled-bg: $custom-select-disabled-bg !global;
     // $custom-select-bg-size: 8px 10px; $custom-select-bg-size: $custom-select-bg-size !global; // In pixels because image dimensions
     // $custom-select-indicator-color: $gray-800; $custom-select-indicator-color: $custom-select-indicator-color !global;
-    // $custom-select-indicator: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E"), "#", "%23"); $custom-select-indicator: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http: $custom-select-indicator: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http !global;
+    // $custom-select-indicator: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E"), "#", "%23"); $custom-select-indicator: $custom-select-indicator !global;
     // $custom-select-border-width: $input-btn-border-width; $custom-select-border-width: $custom-select-border-width !global;
     // $custom-select-border-color: $input-border-color; $custom-select-border-color: $custom-select-border-color !global;
     // $custom-select-border-radius: $border-radius; $custom-select-border-radius: $custom-select-border-radius !global;
@@ -622,14 +622,14 @@
     // $navbar-dark-hover-color: rgba($white, .75); $navbar-dark-hover-color: $navbar-dark-hover-color !global;
     // $navbar-dark-active-color: $white; $navbar-dark-active-color: $navbar-dark-active-color !global;
     // $navbar-dark-disabled-color: rgba($white, .25); $navbar-dark-disabled-color: $navbar-dark-disabled-color !global;
-    // $navbar-dark-toggler-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23"); $navbar-dark-toggler-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http: $navbar-dark-toggler-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http !global;
+    // $navbar-dark-toggler-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23"); $navbar-dark-toggler-icon-bg: $navbar-dark-toggler-icon-bg !global;
     // $navbar-dark-toggler-border-color: rgba($white, .1); $navbar-dark-toggler-border-color: $navbar-dark-toggler-border-color !global;
 
     // $navbar-light-color: rgba($black, .5); $navbar-light-color: $navbar-light-color !global;
     // $navbar-light-hover-color: rgba($black, .7); $navbar-light-hover-color: $navbar-light-hover-color !global;
     // $navbar-light-active-color: rgba($black, .9); $navbar-light-active-color: $navbar-light-active-color !global;
     // $navbar-light-disabled-color: rgba($black, .3); $navbar-light-disabled-color: $navbar-light-disabled-color !global;
-    // $navbar-light-toggler-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23"); $navbar-light-toggler-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http: $navbar-light-toggler-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http !global;
+    // $navbar-light-toggler-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23"); $navbar-light-toggler-icon-bg: $navbar-light-toggler-icon-bg !global;
     // $navbar-light-toggler-border-color: rgba($black, .1); $navbar-light-toggler-border-color: $navbar-light-toggler-border-color !global;
 
     // Pagination
@@ -864,8 +864,8 @@
 
     // $carousel-control-icon-width: 20px; $carousel-control-icon-width: $carousel-control-icon-width !global;
 
-    // $carousel-control-prev-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E"), "#", "%23"); $carousel-control-prev-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http: $carousel-control-prev-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http !global;
-    // $carousel-control-next-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E"), "#", "%23"); $carousel-control-next-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http: $carousel-control-next-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http !global;
+    // $carousel-control-prev-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E"), "#", "%23"); $carousel-control-prev-icon-bg: $carousel-control-prev-icon-bg;
+    // $carousel-control-next-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E"), "#", "%23"); $carousel-control-next-icon-bg: $carousel-control-next-icon-bg !global;
 
     // $carousel-transition: transform .6s ease; $carousel-transition: $carousel-transition !global;
 
