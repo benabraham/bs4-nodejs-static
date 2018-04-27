@@ -7,14 +7,14 @@
   },
   "main": "index.js",
   "devDependencies": {
-    "autoprefixer": "^8.1.0",
-    "bootstrap": "^4.0.0",
-    "browser-sync": "^2.23.6",
+    "autoprefixer": "^8.3.0",
+    "bootstrap": "^4.1.0",
+    "browser-sync": "^2.23.7",
     "del": "^3.0.0",
     "gulp": "^4.0.0",
     "gulp-csso": "^3.0.1",
     "gulp-postcss": "^7.0.1",
-    "gulp-sass": "^3.1.0",
+    "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-surge": "^0.1.0",
     "gulp-twig": "^1.2.0",
@@ -26,5 +26,6 @@
   },
   "author": "Daniel Srb",
   "license": "MIT",
-  "description": "A basic template to start a website based on Bootstrap"
+  "description": "A basic template to start a website based on Bootstrap",
+  "dependencies": {}
 }
