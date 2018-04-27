@@ -1,6 +1,10 @@
 {
   "name": "MyFirstWebsite",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benabraham/bs4-nodejs-static"
+  },
   "main": "index.js",
   "devDependencies": {
     "autoprefixer": "^8.1.0",
