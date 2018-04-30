@@ -8,6 +8,7 @@ Includes:
 - **Sourcemaps** generation for easier Sass debugging
 - **Browsersync**: automatically reloads (or injects in case of CSS), browsers' when you change files 
 - **Autoprefixer**: parses CSS and adds vendor prefixes according to [caniuse.com]()
+- **UnCSS**: removes unused styles from CSS
 - **Flexbugs fixes**: automatically fixes some of the [flexbugs](https://github.com/philipwalton/flexbugs) 
 - **CSSO**: CSS minifier with structural optimizations
 - **Twig.js**: JavaScript implementation of the Twig PHP templating language

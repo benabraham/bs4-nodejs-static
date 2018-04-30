@@ -6,6 +6,7 @@ var del = require('del');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var postcss = require('gulp-postcss');
+var uncss = require('postcss-uncss');
 var autoprefixer = require('autoprefixer');
 var csso = require('gulp-csso');
 var twig = require('gulp-twig');
@@ -38,6 +39,7 @@ gulp.task(
                 .pipe(sourcemaps.init()) // initalizes a sourcemap
                 .pipe(sass().on('error', sass.logError)) // compile SCSS to CSS and also tell us about a problem if happens
                 .pipe(postcss([
+                    uncss({html: ['dist/*.html'], media: ['print']}), // remove CSS not used in generated files
                     autoprefixer( // automatically adds vendor prefixes if needed
                         // supported browsers (from Bootstrap 4 beta: see https://github.com/twbs/bootstrap/blob/v4-dev/package.json#L136-L147)
                         //
@@ -130,7 +132,13 @@ gulp.task(
 
 
 // Build everything
-gulp.task('build', gulp.parallel('css:compile', 'html:compile', 'static:copy'));
+gulp.task(
+    'build',
+    gulp.series(
+        'html:compile', // first compile HTML
+        gulp.parallel('css:compile', 'static:copy')
+    )
+);
 
 
 // Development with automatic refreshing

@@ -19,7 +19,9 @@
     "gulp-surge": "^0.1.0",
     "gulp-twig": "^1.2.0",
     "gulp-watch": "^5.0.0",
-    "postcss-flexbugs-fixes": "^3.3.0"
+    "postcss-flexbugs-fixes": "^3.3.0",
+    "postcss-uncss": "^0.16.1",
+    "uncss": "^0.16.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
