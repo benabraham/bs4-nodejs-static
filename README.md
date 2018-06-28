@@ -19,12 +19,6 @@ Includes:
 
 ### Install latest [node.js](https://nodejs.org/)
 
-### Install `gulp-cli` globally 
-
-```shell
-npm install -g gulp-cli
-```
-
 ### Install all packages from `package.json` locally
 
 ```shell
@@ -33,24 +27,22 @@ npm install
 
 _If you’re having errors in `node-gyp`, try [installing it globally](https://github.com/nodejs/node-gyp#installation)._
 
-
 ## Development
 
 To develop with automatic compilation and browser refreshing run
 
 ```shell
-gulp
+npm start
 ```
 
 And see the result on `http://localhost:3000/`
-
 
 ## Build
 
 To build everything once (in `/dist/` folder) 
 
 ```shell
-gulp build
+npm run build
 ```
 
 ## CSS (Sass preprocessor)
@@ -100,7 +92,7 @@ You can use [surge.sh](https://surge.sh) free service for that.
 1. Install surge client `npm install --global surge`.
 1. Run `surge` manually once in `/dist`: you will create an account with surge.sh.
 1. Set your own domain in `gulpfile.js` (replace `https://my-first-website.surge.sh`).
-1. From now on run `gulp deploy` whenever you want to publish a new version.
+1. From now on run `npm run deploy` whenever you want to publish a new version.
 
 If you want multiple people to be able to deploy to the same domain, run `surge --add mail.your.collaborator.used.to.register.with.surge@example.com` for each.
  

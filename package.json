@@ -7,9 +7,9 @@
   },
   "main": "index.js",
   "devDependencies": {
-    "autoprefixer": "^8.4.1",
+    "autoprefixer": "^8.6.4",
     "bootstrap": "^4.1.1",
-    "browser-sync": "^2.24.1",
+    "browser-sync": "^2.24.5",
     "del": "^3.0.0",
     "gulp": "^4.0.0",
     "gulp-csso": "^3.0.1",
@@ -24,7 +24,10 @@
     "uncss": "^0.16.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp develop",
+    "build": "gulp build",
+    "deploy": "gulp deploy"
   },
   "author": "Daniel Srb",
   "license": "MIT",
