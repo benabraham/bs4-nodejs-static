@@ -25,7 +25,7 @@ Includes:
 npm install
 ```
 
-_If you’re having errors in `node-gyp`, try [installing it globally](https://github.com/nodejs/node-gyp#installation)._
+_If you’re having errors with `node-gyp`, try [installing it globally](https://github.com/nodejs/node-gyp#installation)._
 
 ## Development
 
