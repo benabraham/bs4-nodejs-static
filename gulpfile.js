@@ -40,29 +40,10 @@ gulp.task(
                 .pipe(sass().on('error', sass.logError)) // compile SCSS to CSS and also tell us about a problem if happens
                 .pipe(postcss([
                     uncss({html: ['dist/*.html'], media: ['print']}), // remove CSS not used in generated files
-                    autoprefixer( // automatically adds vendor prefixes if needed
-                        // supported browsers (from Bootstrap 4 beta: see https://github.com/twbs/bootstrap/blob/v4-dev/package.json#L136-L147)
-                        //
-                        // Official browser support policy:
-                        // https://getbootstrap.com/docs/4.0/getting-started/browsers-devices/#supported-browsers
-                        //
-                        "last 1 major version",
-                        ">= 1%",
-                        "Chrome >= 45", // Exact version number here is kinda arbitrary
-                        "Firefox >= 38",
-                        // Note: Edge versions in Autoprefixer & Can I Use refer to the EdgeHTML rendering engine version,
-                        // NOT the Edge app version shown in Edge's "About" screen.
-                        // For example, at the time of writing, Edge 20 on an up-to-date system uses EdgeHTML 12.
-                        // See also https://github.com/Fyrd/caniuse/issues/1928
-                        "Edge >= 12",
-                        "Explorer >= 10",
-                        // Out of leniency, we prefix these 1 version further back than the official policy.
-                        "iOS >= 9",
-                        "Safari >= 9",
-                        // The following remain NOT officially supported, but we're lenient and include their prefixes to avoid severely breaking in them.
-                        "Android >= 4.4",
-                        "Opera >= 30"
-                    ),
+                    autoprefixer(), // automatically adds vendor prefixes if needed
+                    // see browserslist in package.json for included browsers
+                    // Official Bootstrap browser support policy:
+                    // https://getbootstrap.com/docs/4.1/getting-started/browsers-devices/#supported-browsers
                     require('postcss-flexbugs-fixes') // fixes flex bugs if possible: see https://github.com/philipwalton/flexbugs
                 ]))
                 .pipe(csso()) // compresses CSS
