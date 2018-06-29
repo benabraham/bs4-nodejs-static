@@ -21,6 +21,7 @@
     "gulp-watch": "^5.0.0",
     "postcss-flexbugs-fixes": "^3.3.1",
     "postcss-uncss": "^0.16.1",
+    "prettier": "1.13.7",
     "uncss": "^0.16.2"
   },
   "scripts": {
@@ -28,6 +29,9 @@
     "start": "gulp develop",
     "build": "gulp build",
     "deploy": "gulp deploy"
+  },
+  "prettier": {
+    "printWidth": 120
   },
   "author": "Daniel Srb",
   "license": "MIT",
