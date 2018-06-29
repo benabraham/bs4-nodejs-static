@@ -7,40 +7,51 @@ var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var postcss = require('gulp-postcss');
 var uncss = require('postcss-uncss');
-var autoprefixer = require('autoprefixer');
 var csso = require('gulp-csso');
 var twig = require('gulp-twig');
 var fs = require('fs');
 var surge = require('gulp-surge');
 
+
 // … now we can define tasks
 
 
-// Delete all CSS files in dist folder
+// HTML compilation from templates
 gulp.task(
-    'css:clean',
-    gulp.series(function(){
-        return del([
-            'dist/*.css',
-            'dist/*.map'
-        ], { force: true });
-    })
+    'html:compile',
+    gulp.series(
+        function htmlCleanup(){ // Delete all HTML files in dist folder
+            return del('dist/**/*.html', { force: true });
+        },
+        function twigCompile(){ // compile twig templates to html files
+            return gulp.src('src/templates/**/[^_]*.twig')
+                .pipe(twig({ data: JSON.parse(fs.readFileSync('src/templates/data.json')) })) // import from data.json
+                .pipe(gulp.dest('./dist/')) // where to put compiled html
+                .on('end', function(){ // after compilation finishes…
+                    browserSync.reload() // … tell Browsersync to reload
+                });
+        }
+    )
 );
 
 
-// CSS compilation (also deletes CSS files first using previously defined task)
+// CSS compilation
 gulp.task(
     'css:compile',
     gulp.series(
-        'css:clean',
-        function(){
+        function cssCleanup(){ // Delete all CSS files in dist folder
+            return del([
+                'dist/*.css',
+                'dist/*.map'
+            ], { force: true });
+        },
+        function compileCss(){
             return gulp
                 .src('src/scss/index.scss') // this is the source of for compilation
                 .pipe(sourcemaps.init()) // initalizes a sourcemap
                 .pipe(sass().on('error', sass.logError)) // compile SCSS to CSS and also tell us about a problem if happens
                 .pipe(postcss([
-                    uncss({html: ['dist/*.html'], media: ['print']}), // remove CSS not used in generated files
-                    autoprefixer(), // automatically adds vendor prefixes if needed
+                    require('autoprefixer'), // automatically adds vendor prefixes if needed
                     // see browserslist in package.json for included browsers
                     // Official Bootstrap browser support policy:
                     // https://getbootstrap.com/docs/4.1/getting-started/browsers-devices/#supported-browsers
@@ -55,53 +66,19 @@ gulp.task(
 );
 
 
-// Delete all HTML files in dist folder
-gulp.task(
-    'html:clean',
-    gulp.series(function(){
-        return del('dist/**/*.html', { force: true });
-    })
-);
-
-
-// HTML compilation from templates
-gulp.task(
-    'html:compile',
-    gulp.series(
-        'html:clean',
-        function(){
-            return gulp.src('src/templates/**/[^_]*.twig')
-            // compile twig templates to html files
-                .pipe(twig({ data: JSON.parse(fs.readFileSync('src/templates/data.json')) })) // import from data.json
-                .pipe(gulp.dest('./dist/')) // where to put compiled html
-                .on('end', function(){ // after compilation finishes…
-                    browserSync.reload() // … tell Browsersync to reload
-                });
-        }
-    )
-);
-
-
-// Static files cleanup
-gulp.task(
-    'static:clean',
-    gulp.series(function(){
-        return del([
-            'dist/**/*', // delete all files from /src/
-            '!dist/**/*.html', // except HTML files
-            '!dist/**/*.css', // CSS and
-            '!dist/**/*.map' // and sourcemaps
-        ], { force: true });
-    })
-);
-
-
 // Copy all files from /src/static/ to /dist/static/
 gulp.task(
     'static:copy',
     gulp.series(
-        'static:clean',
-        function(){
+        function staticCleanup(){ // Static files cleanup
+            return del([
+                'dist/**/*', // delete all files from /src/
+                '!dist/**/*.html', // except HTML files
+                '!dist/**/*.css', // CSS and
+                '!dist/**/*.map' // and sourcemaps
+            ], { force: true });
+        },
+        function staticCopy(){
             return gulp.src('src/static/**/*')
                 .pipe(gulp.dest('dist'))
                 .on('end', function(){ // after copying finishes…
@@ -112,22 +89,12 @@ gulp.task(
 );
 
 
-// Build everything
-gulp.task(
-    'build',
-    gulp.series(
-        'html:compile', // first compile HTML
-        gulp.parallel('css:compile', 'static:copy')
-    )
-);
-
-
 // Development with automatic refreshing
 gulp.task(
     'develop',
     gulp.series(
-        'build',
-        function(){
+        gulp.parallel('html:compile', 'css:compile', 'static:copy'),
+        function startBrowsersync(){
             browserSync.init({ // initalize Browsersync
                 // set what files be served
                 server: {
@@ -148,12 +115,29 @@ gulp.task(
 );
 
 
+// Build everything for production
+gulp.task(
+    'build',
+    gulp.series(
+        'html:compile', // first compile HTML
+        gulp.parallel('css:compile', 'static:copy'),
+        function useUncss() {
+          return gulp
+              .src('dist/index.css')
+              .pipe(postcss([
+                  uncss({html: ['dist/**/*.html'], media: ['print']}) // remove CSS that isn’t used in generated files
+              ]))
+        }
+    )
+);
+
+
 // Deploy to surge.sh
 gulp.task(
     'deploy',
     gulp.series(
         'build',
-        function(){
+        function surgeDeploy(){
             return surge({
                 project: 'dist',
                 // change to your domain

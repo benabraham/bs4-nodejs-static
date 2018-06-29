@@ -39,7 +39,7 @@ And see the result on `http://localhost:3000/`
 
 ## Build
 
-To build everything once (in `/dist/` folder) 
+To build everything once for production deploy (in `/dist/` folder) 
 
 ```shell
 npm run build
