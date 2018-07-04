@@ -39,7 +39,9 @@ And see the result on `http://localhost:3000/`
 
 ## Build
 
-To build everything once for production deploy (in `/dist/` folder) 
+To build everything once for production deploy (in `/dist/` folder)
+
+This build uses all generated HTML files for _UnCSS_. If it removes something you need to keep, add and array to `ignore` option in `gulpfile.js`.  
 
 ```shell
 npm run build
@@ -78,7 +80,7 @@ You can comment out Bootstrap components you don't need in `/src/index.scss`.
 
 `/src/_custom-bootstrap-variables.scss` contains only customized Bootstrap variables.
 
-See `gulpfile.js` for supported browsers.
+See `browserslist` in `package.json` for supported browsers.
 
 
 ### Deployment

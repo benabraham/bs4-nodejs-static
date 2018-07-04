@@ -123,10 +123,15 @@ gulp.task(
     gulp.series(
         "html:compile", // first compile HTML
         gulp.parallel("css:compile", "static:copy"),
+        // remove CSS that isn’t used in generated HTML files
         function useUncss() {
             return gulp.src("dist/index.css").pipe(
                 postcss([
-                    uncss({ html: ["dist/**/*.html"], media: ["print"] }) // remove CSS that isn’t used in generated files
+                    uncss({
+                        html: ["dist/**/*.html"],
+                        media: ["print"], // process additional media queries
+                        ignore: [] // provide a list of selectors that should not be removed by UnCSS
+                    })
                 ])
             );
         }
