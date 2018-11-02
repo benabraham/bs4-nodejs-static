@@ -45,7 +45,6 @@
     // Color system
     //
 
-    // stylelint-disable
     // $white: #fff; $white: $white !global; // #fff
     // $gray-100: #f8f9fa; $gray-100: $gray-100 !global; // #f8f9fa
     // $gray-200: #e9ecef; $gray-200: $gray-200 !global; // #e9ecef
@@ -125,7 +124,7 @@
     //        "light": $light,
     //        "dark": $dark
     ); $theme-colors: $theme-colors !global;
-    // stylelint-enable
+
     */
 
     // Set a specific jump point for requesting color jumps
@@ -157,7 +156,7 @@
     // variables. Mostly focused on spacing.
     // You can add more entries to the $spacers map, should you need more variation.
 
-    // stylelint-disable
+
     // $spacer: 1rem; $spacer: $spacer !global; // 1rem
     /*
     // uncomment whole block, the following variable uses map-merge(),
@@ -185,7 +184,7 @@
     //        auto: auto
     ); $sizes: $sizes !global;
     */
-    // stylelint-enable
+
 
     // Body
     //
@@ -274,11 +273,11 @@
     //
     // Font, line-height, and color for body text, headings, and more.
 
-    // stylelint-disable value-keyword-case
-    // $font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; $font-family-sans-serif: $font-family-sans-serif !global; // -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+
+    // $font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; $font-family-sans-serif: $font-family-sans-serif !global; // -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
     // $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; $font-family-monospace: $font-family-monospace !global; // SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
     // $font-family-base: $font-family-sans-serif; $font-family-base: $font-family-base !global; // $font-family-sans-serif
-    // stylelint-enable value-keyword-case
+
 
     // $font-size-base: 1rem; $font-size-base: $font-size-base !global; // 1rem // Assumes the browser default, typically `16px`
     // $font-size-lg: ($font-size-base * 1.25); $font-size-lg: $font-size-lg !global; // ($font-size-base * 1.25)
@@ -492,6 +491,8 @@
     // $input-group-addon-bg: $gray-200; $input-group-addon-bg: $input-group-addon-bg !global; // $gray-200
     // $input-group-addon-border-color: $input-border-color; $input-group-addon-border-color: $input-group-addon-border-color !global; // $input-border-color
 
+    // $custom-forms-transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out; $custom-forms-transition: $custom-forms-transition !global; // background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
+
     // $custom-control-gutter: 1.5rem; $custom-control-gutter: $custom-control-gutter !global; // 1.5rem
     // $custom-control-spacer-x: 1rem; $custom-control-spacer-x: $custom-control-spacer-x !global; // 1rem
 
@@ -540,9 +541,11 @@
     // $custom-select-border-width: $input-btn-border-width; $custom-select-border-width: $custom-select-border-width !global; // $input-btn-border-width
     // $custom-select-border-color: $input-border-color; $custom-select-border-color: $custom-select-border-color !global; // $input-border-color
     // $custom-select-border-radius: $border-radius; $custom-select-border-radius: $custom-select-border-radius !global; // $border-radius
+    // $custom-select-box-shadow: inset 0 1px 2px rgba($black, .075); $custom-select-box-shadow: $custom-select-box-shadow !global; // inset 0 1px 2px rgba($black, .075)
 
     // $custom-select-focus-border-color: $input-focus-border-color; $custom-select-focus-border-color: $custom-select-focus-border-color !global; // $input-focus-border-color
-    // $custom-select-focus-box-shadow: inset 0 1px 2px rgba($black, .075), 0 0 5px rgba($custom-select-focus-border-color, .5); $custom-select-focus-box-shadow: $custom-select-focus-box-shadow !global; // inset 0 1px 2px rgba($black, .075), 0 0 5px rgba($custom-select-focus-border-color, .5)
+    // $custom-select-focus-width: $input-btn-focus-width; $custom-select-focus-width: $custom-select-focus-width !global; // $input-btn-focus-width
+    // $custom-select-focus-box-shadow: 0 0 0 $custom-select-focus-width rgba($custom-select-focus-border-color, .5); $custom-select-focus-box-shadow: $custom-select-focus-box-shadow !global; // 0 0 0 $custom-select-focus-width rgba($custom-select-focus-border-color, .5)
 
     // $custom-select-font-size-sm: 75%; $custom-select-font-size-sm: $custom-select-font-size-sm !global; // 75%
     // $custom-select-height-sm: $input-height-sm; $custom-select-height-sm: $custom-select-height-sm !global; // $input-height-sm
@@ -564,11 +567,14 @@
     // $custom-range-thumb-border-radius: 1rem; $custom-range-thumb-border-radius: $custom-range-thumb-border-radius !global; // 1rem
     // $custom-range-thumb-box-shadow: 0 .1rem .25rem rgba($black, .1); $custom-range-thumb-box-shadow: $custom-range-thumb-box-shadow !global; // 0 .1rem .25rem rgba($black, .1)
     // $custom-range-thumb-focus-box-shadow: 0 0 0 1px $body-bg, $input-btn-focus-box-shadow; $custom-range-thumb-focus-box-shadow: $custom-range-thumb-focus-box-shadow !global; // 0 0 0 1px $body-bg, $input-btn-focus-box-shadow
+    // $custom-range-thumb-focus-box-shadow-width: $input-btn-focus-width; $custom-range-thumb-focus-box-shadow-width: $custom-range-thumb-focus-box-shadow-width !global; // $input-btn-focus-width // For focus box shadow issue in IE/Edge
     // $custom-range-thumb-active-bg: lighten($component-active-bg, 35%); $custom-range-thumb-active-bg: $custom-range-thumb-active-bg !global; // lighten($component-active-bg, 35%)
 
     // $custom-file-height: $input-height; $custom-file-height: $custom-file-height !global; // $input-height
     // $custom-file-focus-border-color: $input-focus-border-color; $custom-file-focus-border-color: $custom-file-focus-border-color !global; // $input-focus-border-color
     // $custom-file-focus-box-shadow: $input-btn-focus-box-shadow; $custom-file-focus-box-shadow: $custom-file-focus-box-shadow !global; // $input-btn-focus-box-shadow
+
+    // $custom-file-disabled-bg: $input-disabled-bg; $custom-file-disabled-bg: $custom-file-disabled-bg !global; // $input-disabled-bg
 
     // $custom-file-padding-y: $input-btn-padding-y; $custom-file-padding-y: $custom-file-padding-y !global; // $input-btn-padding-y
     // $custom-file-padding-x: $input-btn-padding-x; $custom-file-padding-x: $custom-file-padding-x !global; // $input-btn-padding-x
