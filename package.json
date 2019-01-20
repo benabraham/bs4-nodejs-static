@@ -21,7 +21,7 @@
     "gulp-watch": "^5.0.1",
     "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-uncss": "^0.16.1",
-    "prettier": "1.14.3",
+    "prettier": "1.16.0",
     "uncss": "^0.16.2"
   },
   "scripts": {
