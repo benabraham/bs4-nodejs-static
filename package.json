@@ -38,8 +38,9 @@
   "description": "A basic template to start a website based on Bootstrap",
   "dependencies": {},
   "browserslist": [
-    "last 1 major version",
     ">= 1%",
+    "last 1 major version",
+    "not dead",
     "Chrome >= 45",
     "Firefox >= 38",
     "Edge >= 12",
