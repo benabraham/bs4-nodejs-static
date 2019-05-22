@@ -11,7 +11,7 @@
     "bootstrap": "^4.3.1",
     "browser-sync": "^2.26.5",
     "del": "^4.1.1",
-    "gulp": "^4.0.1",
+    "gulp": "^4.0.2",
     "gulp-csso": "^3.0.1",
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",
@@ -21,7 +21,7 @@
     "gulp-watch": "^5.0.1",
     "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-uncss": "^0.16.1",
-    "prettier": "1.17.0",
+    "prettier": "1.17.1",
     "uncss": "^0.16.2"
   },
   "scripts": {
