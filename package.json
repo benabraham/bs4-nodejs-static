@@ -7,10 +7,10 @@
   },
   "main": "index.js",
   "devDependencies": {
-    "autoprefixer": "^9.5.1",
+    "autoprefixer": "^9.6.1",
     "bootstrap": "^4.3.1",
-    "browser-sync": "^2.26.5",
-    "del": "^4.1.1",
+    "browser-sync": "^2.26.7",
+    "del": "^5.0.0",
     "gulp": "^4.0.2",
     "gulp-csso": "^3.0.1",
     "gulp-postcss": "^8.0.0",
@@ -20,9 +20,9 @@
     "gulp-twig": "^1.2.0",
     "gulp-watch": "^5.0.1",
     "postcss-flexbugs-fixes": "^4.1.0",
-    "postcss-uncss": "^0.16.1",
-    "prettier": "1.17.1",
-    "uncss": "^0.16.2"
+    "postcss-uncss": "^0.17.0",
+    "prettier": "1.18.2",
+    "uncss": "^0.17.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
