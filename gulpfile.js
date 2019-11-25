@@ -26,7 +26,7 @@ gulp.task(
             // compile twig templates to html files
             return gulp
                 .src("src/templates/**/[^_]*.twig")
-                .pipe(twig({ data: JSON.parse(fs.readFileSync("src/templates/data.json")) })) // import from data.json
+                .pipe(twig({ data: JSON.parse(fs.readFileSync("src/data.json")) })) // import from data.json
                 .pipe(gulp.dest("./dist/")) // where to put compiled html
                 .on("end", function() {
                     // after compilation finishes…
