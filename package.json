@@ -31,6 +31,7 @@
     "deploy": "gulp deploy"
   },
   "prettier": {
+    "tabWidth": 4,
     "printWidth": 120
   },
   "author": "Daniel Srb",
