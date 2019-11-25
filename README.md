@@ -91,9 +91,8 @@ Upload everything in `/dist/` folder to the server.
 
 You can use [surge.sh](https://surge.sh) free service for that.
 
-1. Install surge client `npm install --global surge`.
-1. Run `surge` manually once in `/dist`: you will create an account with surge.sh.
-1. Set your own domain in `gulpfile.js` (replace `https://my-first-website.surge.sh`).
+1. If you don’t have a surge account: run surge client with `npx surge` in `/dist` folder to create it.
+1. Set your own domain in `package.json` (just replace `https://my-first-website.surge.sh` with yours).
 1. From now on run `npm run deploy` whenever you want to publish a new version.
 
 If you want multiple people to be able to deploy to the same domain, run `surge --add mail.your.collaborator.used.to.register.with.surge@example.com` for each.

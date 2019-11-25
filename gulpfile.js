@@ -10,7 +10,6 @@ var uncss = require("postcss-uncss");
 var csso = require("gulp-csso");
 var twig = require("gulp-twig");
 var fs = require("fs");
-var surge = require("gulp-surge");
 
 // … now we can define tasks
 
@@ -136,20 +135,6 @@ gulp.task(
             );
         }
     )
-);
-
-// Deploy to surge.sh
-gulp.task(
-    "deploy",
-    gulp.series("build", function surgeDeploy() {
-        return surge({
-            project: "dist",
-            // change to your domain
-            domain: "https://my-first-website.surge.sh"
-            // note 1: URL must end .surge.sh if you haven’t bought yours and configured DNS
-            // note 2: https for custom domains is a paid feature
-        });
-    })
 );
 
 // Set develop as a default task (Gulp runs this when you don't specify a task)
