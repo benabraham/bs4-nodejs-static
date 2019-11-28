@@ -142,6 +142,17 @@
     // $yiq-text-dark: $gray-900; $yiq-text-dark: $yiq-text-dark !global; // $gray-900
     // $yiq-text-light: $white; $yiq-text-light: $yiq-text-light !global; // $white
 
+    // Characters which are escaped by the escape-svg function
+
+    // uncomment whole block, the following variable uses map-merge(),
+    // so you can define only new ones you need
+    /*
+    $escaped-characters: (
+    //        ("<","%3c"),
+    //        (">","%3e"),
+    //        ("#","%23"),
+    ); $escaped-characters: $escaped-characters !global;
+    */
 
     // Options
     //
@@ -263,7 +274,7 @@
 
     // $grid-columns: 12; $grid-columns: $grid-columns !global; // 12
     // $grid-gutter-width: 30px; $grid-gutter-width: $grid-gutter-width !global; // 30px
-
+    // $grid-row-columns: 6; $grid-row-columns: $grid-row-columns !global; // 6
 
     // Components
     //
@@ -410,7 +421,6 @@
     // $table-dark-hover-color: $table-dark-color; $table-dark-hover-color: $table-dark-hover-color !global; // $table-dark-color
     // $table-dark-hover-bg: rgba($white, .075); $table-dark-hover-bg: $table-dark-hover-bg !global; // rgba($white, .075)
     // $table-dark-border-color: lighten($table-dark-bg, 7.5%); $table-dark-border-color: $table-dark-border-color !global; // lighten($table-dark-bg, 7.5%)
-    // $table-dark-color: $white; $table-dark-color: $table-dark-color !global; // $white
 
     // $table-striped-order: odd; $table-striped-order: $table-striped-order !global; // odd
 
@@ -456,6 +466,7 @@
     // $btn-font-family: $input-btn-font-family; $btn-font-family: $btn-font-family !global; // $input-btn-font-family
     // $btn-font-size: $input-btn-font-size; $btn-font-size: $btn-font-size !global; // $input-btn-font-size
     // $btn-line-height: $input-btn-line-height; $btn-line-height: $btn-line-height !global; // $input-btn-line-height
+    // $btn-white-space: null; $btn-white-space: $btn-white-space !global; // null // Set to `nowrap` to prevent text wrapping
 
     // $btn-padding-y-sm: $input-btn-padding-y-sm; $btn-padding-y-sm: $btn-padding-y-sm !global; // $input-btn-padding-y-sm
     // $btn-padding-x-sm: $input-btn-padding-x-sm; $btn-padding-x-sm: $btn-padding-x-sm !global; // $input-btn-padding-x-sm
@@ -532,13 +543,13 @@
 
     // $input-height-border: $input-border-width * 2; $input-height-border: $input-height-border !global; // $input-border-width * 2
 
-    // $input-height-inner: calc(#{$input-line-height * 1em} + #{$input-padding-y * 2}); $input-height-inner: $input-height-inner !global; // calc(#{$input-line-height * 1em} + #{$input-padding-y * 2})
-    // $input-height-inner-half: calc(#{$input-line-height * .5em} + #{$input-padding-y}); $input-height-inner-half: $input-height-inner-half !global; // calc(#{$input-line-height * .5em} + #{$input-padding-y})
-    // $input-height-inner-quarter: calc(#{$input-line-height * .25em} + #{$input-padding-y / 2}); $input-height-inner-quarter: $input-height-inner-quarter !global; // calc(#{$input-line-height * .25em} + #{$input-padding-y / 2})
+    // $input-height-inner: add($input-line-height * 1em, $input-padding-y * 2); $input-height-inner: $input-height-inner !global; // add($input-line-height * 1em, $input-padding-y * 2)
+    // $input-height-inner-half: add($input-line-height * .5em, $input-padding-y); $input-height-inner-half: $input-height-inner-half !global; // add($input-line-height * .5em, $input-padding-y)
+    // $input-height-inner-quarter: add($input-line-height * .25em, $input-padding-y / 2); $input-height-inner-quarter: $input-height-inner-quarter !global; // add($input-line-height * .25em, $input-padding-y / 2)
 
-    // $input-height: calc(#{$input-line-height * 1em} + #{$input-padding-y * 2} + #{$input-height-border}); $input-height: $input-height !global; // calc(#{$input-line-height * 1em} + #{$input-padding-y * 2} + #{$input-height-border})
-    // $input-height-sm: calc(#{$input-line-height-sm * 1em} + #{$input-btn-padding-y-sm * 2} + #{$input-height-border}); $input-height-sm: $input-height-sm !global; // calc(#{$input-line-height-sm * 1em} + #{$input-btn-padding-y-sm * 2} + #{$input-height-border})
-    // $input-height-lg: calc(#{$input-line-height-lg * 1em} + #{$input-btn-padding-y-lg * 2} + #{$input-height-border}); $input-height-lg: $input-height-lg !global; // calc(#{$input-line-height-lg * 1em} + #{$input-btn-padding-y-lg * 2} + #{$input-height-border})
+    // $input-height: add($input-line-height * 1em, add($input-padding-y * 2, $input-height-border, false)); $input-height: $input-height !global; // add($input-line-height * 1em, add($input-padding-y * 2, $input-height-border, false))
+    // $input-height-sm: add($input-line-height-sm * 1em, add($input-padding-y-sm * 2, $input-height-border, false)); $input-height-sm: $input-height-sm !global; // add($input-line-height-sm * 1em, add($input-padding-y-sm * 2, $input-height-border, false))
+    // $input-height-lg: add($input-line-height-lg * 1em, add($input-padding-y-lg * 2, $input-height-border, false)); $input-height-lg: $input-height-lg !global; // add($input-line-height-lg * 1em, add($input-padding-y-lg * 2, $input-height-border, false))
 
     // $input-transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out; $input-transition: $input-transition !global; // border-color .15s ease-in-out, box-shadow .15s ease-in-out
 
@@ -562,6 +573,7 @@
 
     // $custom-control-gutter: .5rem; $custom-control-gutter: $custom-control-gutter !global; // .5rem
     // $custom-control-spacer-x: 1rem; $custom-control-spacer-x: $custom-control-spacer-x !global; // 1rem
+    // $custom-control-cursor: null; $custom-control-cursor: $custom-control-cursor !global; // null
 
     // $custom-control-indicator-size: 1rem; $custom-control-indicator-size: $custom-control-indicator-size !global; // 1rem
     // $custom-control-indicator-bg: $input-bg; $custom-control-indicator-bg: $custom-control-indicator-bg !global; // $input-bg
@@ -570,6 +582,7 @@
     // $custom-control-indicator-box-shadow: $input-box-shadow; $custom-control-indicator-box-shadow: $custom-control-indicator-box-shadow !global; // $input-box-shadow
     // $custom-control-indicator-border-color: $gray-500; $custom-control-indicator-border-color: $custom-control-indicator-border-color !global; // $gray-500
     // $custom-control-indicator-border-width: $input-border-width; $custom-control-indicator-border-width: $custom-control-indicator-border-width !global; // $input-border-width
+    // custom-control-label-color-width: null; custom-control-label-color-width: custom-control-label-color-width !global; // null
 
     // $custom-control-indicator-disabled-bg: $input-disabled-bg; $custom-control-indicator-disabled-bg: $custom-control-indicator-disabled-bg !global; // $input-disabled-bg
     // $custom-control-label-disabled-color: $gray-600; $custom-control-label-disabled-color: $custom-control-label-disabled-color !global; // $gray-600
@@ -589,20 +602,20 @@
     // $custom-control-indicator-active-border-color: $custom-control-indicator-active-bg; $custom-control-indicator-active-border-color: $custom-control-indicator-active-border-color !global; // $custom-control-indicator-active-bg
 
     // $custom-checkbox-indicator-border-radius: $border-radius; $custom-checkbox-indicator-border-radius: $custom-checkbox-indicator-border-radius !global; // $border-radius
-    // $custom-checkbox-indicator-icon-checked: str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='#{$custom-control-indicator-checked-color}' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e"), "#", "%23"); $custom-checkbox-indicator-icon-checked: $custom-checkbox-indicator-icon-checked !global; // str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='#{$custom-control-indicator-checked-color}' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e"), "#", "%23")
+    // $custom-checkbox-indicator-icon-checked: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'><path fill='#{$custom-control-indicator-checked-color}' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/></svg>"); $custom-checkbox-indicator-icon-checked: $custom-checkbox-indicator-icon-checked !global; // url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'><path fill='#{$custom-control-indicator-checked-color}' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/></svg>")
 
     // $custom-checkbox-indicator-indeterminate-bg: $component-active-bg; $custom-checkbox-indicator-indeterminate-bg: $custom-checkbox-indicator-indeterminate-bg !global; // $component-active-bg
     // $custom-checkbox-indicator-indeterminate-color: $custom-control-indicator-checked-color; $custom-checkbox-indicator-indeterminate-color: $custom-checkbox-indicator-indeterminate-color !global; // $custom-control-indicator-checked-color
-    // $custom-checkbox-indicator-icon-indeterminate: str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3e%3cpath stroke='#{$custom-checkbox-indicator-indeterminate-color}' d='M0 2h4'/%3e%3c/svg%3e"), "#", "%23"), "#", "%23"); $custom-checkbox-indicator-icon-indeterminate: $custom-checkbox-indicator-icon-indeterminate !global; // str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3e%3cpath stroke='#{$custom-checkbox-indicator-indeterminate-color}' d='M0 2h4'/%3e%3c/svg%3e"), "#", "%23")
+    // $custom-checkbox-indicator-icon-indeterminate: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'><path stroke='#{$custom-checkbox-indicator-indeterminate-color}' d='M0 2h4'/></svg>"); $custom-checkbox-indicator-icon-indeterminate: $custom-checkbox-indicator-icon-indeterminate !global; // url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'><path stroke='#{$custom-checkbox-indicator-indeterminate-color}' d='M0 2h4'/></svg>")
     // $custom-checkbox-indicator-indeterminate-box-shadow: none; $custom-checkbox-indicator-indeterminate-box-shadow: $custom-checkbox-indicator-indeterminate-box-shadow !global; // none
     // $custom-checkbox-indicator-indeterminate-border-color: $custom-checkbox-indicator-indeterminate-bg; $custom-checkbox-indicator-indeterminate-border-color: $custom-checkbox-indicator-indeterminate-border-color !global; // $custom-checkbox-indicator-indeterminate-bg
 
     // $custom-radio-indicator-border-radius: 50%; $custom-radio-indicator-border-radius: $custom-radio-indicator-border-radius !global; // 50%
-    // $custom-radio-indicator-icon-checked: str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-control-indicator-checked-color}'/%3e%3c/svg%3e"), "#", "%23"); $custom-radio-indicator-icon-checked: $custom-radio-indicator-icon-checked !global; // str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-control-indicator-checked-color}'/%3e%3c/svg%3e"), "#", "%23")
+    // $custom-radio-indicator-icon-checked: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='-4 -4 8 8'><circle r='3' fill='#{$custom-control-indicator-checked-color}'/></svg>"); $custom-radio-indicator-icon-checked: $custom-radio-indicator-icon-checked !global; // url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='-4 -4 8 8'><circle r='3' fill='#{$custom-control-indicator-checked-color}'/></svg>")
 
     // $custom-switch-width: $custom-control-indicator-size * 1.75; $custom-switch-width: $custom-switch-width !global; // $custom-control-indicator-size * 1.75
     // $custom-switch-indicator-border-radius: $custom-control-indicator-size / 2; $custom-switch-indicator-border-radius: $custom-switch-indicator-border-radius !global; // $custom-control-indicator-size / 2
-    // $custom-switch-indicator-size: calc(#{$custom-control-indicator-size} - #{$custom-control-indicator-border-width * 4}); $custom-switch-indicator-size: $custom-switch-indicator-size !global; // calc(#{$custom-control-indicator-size} - #{$custom-control-indicator-border-width * 4})
+    // $custom-switch-indicator-size: subtract($custom-control-indicator-size, $custom-control-indicator-border-width * 4); $custom-switch-indicator-size: $custom-switch-indicator-size !global; // subtract($custom-control-indicator-size, $custom-control-indicator-border-width * 4)
 
     // $custom-select-padding-y: $input-padding-y; $custom-select-padding-y: $custom-select-padding-y !global; // $input-padding-y
     // $custom-select-padding-x: $input-padding-x; $custom-select-padding-x: $custom-select-padding-x !global; // $input-padding-x
@@ -618,10 +631,10 @@
     // $custom-select-disabled-bg: $gray-200; $custom-select-disabled-bg: $custom-select-disabled-bg !global; // $gray-200
     // $custom-select-bg-size: 8px 10px; $custom-select-bg-size: $custom-select-bg-size !global; // 8px 10px // In pixels because image dimensions
     // $custom-select-indicator-color: $gray-800; $custom-select-indicator-color: $custom-select-indicator-color !global; // $gray-800
-    // $custom-select-indicator: str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e"), "#", "%23"); $custom-select-indicator: $custom-select-indicator !global; // str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e"), "#", "%23")
-    // $custom-select-background: $custom-select-indicator no-repeat right $custom-select-padding-x center / $custom-select-bg-size; $custom-select-background: $custom-select-background !global; // $custom-select-indicator no-repeat right $custom-select-padding-x center / $custom-select-bg-size // Used so we can have multiple background elements (e.g., arrow and feedback icon)
+    // $custom-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'><path fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>"); $custom-select-indicator: $custom-select-indicator !global; // url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'><path fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>")
+    // $custom-select-background: escape-svg($custom-select-indicator) no-repeat right $custom-select-padding-x center / $custom-select-bg-size; $custom-select-background: $custom-select-background !global; // escape-svg($custom-select-indicator) no-repeat right $custom-select-padding-x center / $custom-select-bg-size // Used so we can have multiple background elements (e.g., arrow and feedback icon)
 
-    // $custom-select-feedback-icon-padding-right: calc((1em + #{2 * $custom-select-padding-y}) * 3 / 4 + #{$custom-select-padding-x + $custom-select-indicator-padding}); $custom-select-feedback-icon-padding-right: $custom-select-feedback-icon-padding-right !global; // calc((1em + #{2 * $custom-select-padding-y}) * 3 / 4 + #{$custom-select-padding-x + $custom-select-indicator-padding})
+    // $custom-select-feedback-icon-padding-right: add(1em * .75, (2 * $custom-select-padding-y * .75) + $custom-select-padding-x + $custom-select-indicator-padding); $custom-select-feedback-icon-padding-right: $custom-select-feedback-icon-padding-right !global; // add(1em * .75, (2 * $custom-select-padding-y * .75) + $custom-select-padding-x + $custom-select-indicator-padding)
     // $custom-select-feedback-icon-position: center right ($custom-select-padding-x + $custom-select-indicator-padding); $custom-select-feedback-icon-position: $custom-select-feedback-icon-position !global; // center right ($custom-select-padding-x + $custom-select-indicator-padding)
     // $custom-select-feedback-icon-size: $input-height-inner-half $input-height-inner-half; $custom-select-feedback-icon-size: $custom-select-feedback-icon-size !global; // $input-height-inner-half $input-height-inner-half
 
@@ -692,9 +705,9 @@
     // $form-feedback-invalid-color: theme-color("danger"); $form-feedback-invalid-color: $form-feedback-invalid-color !global; // theme-color("danger")
 
     // $form-feedback-icon-valid-color: $form-feedback-valid-color; $form-feedback-icon-valid-color: $form-feedback-icon-valid-color !global; // $form-feedback-valid-color
-    // $form-feedback-icon-valid: str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='#{$form-feedback-icon-valid-color}' D='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e"), "#", "%23"); $form-feedback-icon-valid: $form-feedback-icon-valid !global; // str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='#{$form-feedback-icon-valid-color}' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e"), "#", "%23")
+    // $form-feedback-icon-valid: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'><path fill='#{$form-feedback-icon-valid-color}' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/></svg>"); $form-feedback-icon-valid: $form-feedback-icon-valid !global; // url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'><path fill='#{$form-feedback-icon-valid-color}' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/></svg>")
     // $form-feedback-icon-invalid-color: $form-feedback-invalid-color; $form-feedback-icon-invalid-color: $form-feedback-icon-invalid-color !global; // $form-feedback-invalid-color
-    // $form-feedback-icon-invalid: str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='#{$form-feedback-icon-invalid-color}' viewBox='-2 -2 7 7'%3e%3cpath stroke='#{$form-feedback-icon-invalid-color}' D='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svG%3E"), "#", "%23"); $form-feedback-icon-invalid: $form-feedback-icon-invalid !global; // str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='#{$form-feedback-icon-invalid-color}' viewBox='-2 -2 7 7'%3e%3cpath stroke='#{$form-feedback-icon-invalid-color}' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E"), "#", "%23")
+    // $form-feedback-icon-invalid: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='#{$form-feedback-icon-invalid-color}' viewBox='0 0 12 12'><circle cx='6' cy='6' r='4.5'/><path stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/><circle cx='6' cy='8.2' r='.6' fill='#{$form-feedback-icon-invalid-color}' stroke='none'/></svg>"); $form-feedback-icon-invalid: $form-feedback-icon-invalid !global; // url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='#{$form-feedback-icon-invalid-color}' viewBox='0 0 12 12'><circle cx='6' cy='6' r='4.5'/><path stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/><circle cx='6' cy='8.2' r='.6' fill='#{$form-feedback-icon-invalid-color}' stroke='none'/></svg>")
 
     // uncomment whole block, the following variable uses map-merge(),
     // so you can define only new ones you need
@@ -778,7 +791,7 @@
     // $navbar-light-hover-color: rgba($black, .7); $navbar-light-hover-color: $navbar-light-hover-color !global; // rgba($black, .7)
     // $navbar-light-active-color: rgba($black, .9); $navbar-light-active-color: $navbar-light-active-color !global; // rgba($black, .9)
     // $navbar-light-disabled-color: rgba($black, .3); $navbar-light-disabled-color: $navbar-light-disabled-color !global; // rgba($black, .3)
-    // $navbar-light-toggler-icon-bg: str-replace(url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' D='M4 7H22M4 15H22M4 23h22'/%3e%3c/svg%3e"), "#", "%23"); $navbar-light-toggler-icon-bg: $navbar-light-toggler-icon-bg !global; // str-replace(url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"), "#", "%23")
+    // $navbar-light-toggler-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='#{$navbar-light-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>"); $navbar-light-toggler-icon-bg: $navbar-light-toggler-icon-bg !global; // url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='#{$navbar-light-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>")
     // $navbar-light-toggler-border-color: rgba($black, .1); $navbar-light-toggler-border-color: $navbar-light-toggler-border-color !global; // rgba($black, .1)
 
     // $navbar-light-brand-color: $navbar-light-active-color; $navbar-light-brand-color: $navbar-light-brand-color !global; // $navbar-light-active-color
@@ -800,7 +813,7 @@
     // $dropdown-border-color: rgba($black, .15); $dropdown-border-color: $dropdown-border-color !global; // rgba($black, .15)
     // $dropdown-border-radius: $border-radius; $dropdown-border-radius: $dropdown-border-radius !global; // $border-radius
     // $dropdown-border-width: $border-width; $dropdown-border-width: $dropdown-border-width !global; // $border-width
-    // $dropdown-inner-border-radius: calc(#{$dropdown-border-radius} - #{$dropdown-border-width}); $dropdown-inner-border-radius: $dropdown-inner-border-radius !global; // calc(#{$dropdown-border-radius} - #{$dropdown-border-width})
+    // $dropdown-inner-border-radius: subtract($dropdown-border-radius, $dropdown-border-width); $dropdown-inner-border-radius: $dropdown-inner-border-radius !global; // subtract($dropdown-border-radius, $dropdown-border-width)
     // $dropdown-divider-bg: $gray-200; $dropdown-divider-bg: $dropdown-divider-bg !global; // $gray-200
     // $dropdown-divider-margin-y: $nav-divider-margin-y; $dropdown-divider-margin-y: $dropdown-divider-margin-y !global; // $nav-divider-margin-y
     // $dropdown-box-shadow: 0 .5rem 1rem rgba($black, .175); $dropdown-box-shadow: $dropdown-box-shadow !global; // 0 .5rem 1rem rgba($black, .175)
@@ -865,9 +878,10 @@
     // $card-border-width: $border-width; $card-border-width: $card-border-width !global; // $border-width
     // $card-border-radius: $border-radius; $card-border-radius: $card-border-radius !global; // $border-radius
     // $card-border-color: rgba($black, .125); $card-border-color: $card-border-color !global; // rgba($black, .125)
-    // $card-inner-border-radius: calc(#{$card-border-radius} - #{$card-border-width}); $card-inner-border-radius: $card-inner-border-radius !global; // calc(#{$card-border-radius} - #{$card-border-width})
+    // $card-inner-border-radius: subtract($card-border-radius, $card-border-width); $card-inner-border-radius: $card-inner-border-radius !global; // subtract($card-border-radius, $card-border-width)
     // $card-cap-bg: rgba($black, .03); $card-cap-bg: $card-cap-bg !global; // rgba($black, .03)
     // $card-cap-color: null; $card-cap-color: $card-cap-color !global; // null
+    // card-height: null; card-height: card-height !global; // null
     // $card-color: null; $card-color: $card-color !global; // null
     // $card-bg: $white; $card-bg: $card-bg !global; // $white
 
@@ -914,6 +928,7 @@
     // $popover-border-width: $border-width; $popover-border-width: $popover-border-width !global; // $border-width
     // $popover-border-color: rgba($black, .2); $popover-border-color: $popover-border-color !global; // rgba($black, .2)
     // $popover-border-radius: $border-radius-lg; $popover-border-radius: $popover-border-radius !global; // $border-radius-lg
+    // $popover-inner-border-radius: subtract($popover-border-radius, $popover-border-width); $popover-inner-border-radius: $popover-inner-border-radius !global; // subtract($popover-border-radius, $popover-border-width)
     // $popover-box-shadow: 0 .25rem .5rem rgba($black, .2); $popover-box-shadow: $popover-box-shadow !global; // 0 .25rem .5rem rgba($black, .2)
 
     // $popover-header-bg: darken($popover-bg, 3%); $popover-header-bg: $popover-header-bg !global; // darken($popover-bg, 3%)
@@ -972,6 +987,8 @@
     // Padding applied to the modal body
     // $modal-inner-padding: 1rem; $modal-inner-padding: $modal-inner-padding !global; // 1rem
 
+    // Margin between elements in footer, must be lower than or equal to 2 * $modal-inner-padding
+    // $modal-footer-margin-between: .5rem; $modal-footer-margin-between: $modal-footer-margin-between !global; // .5rem
     // $modal-dialog-margin: .5rem; $modal-dialog-margin: $modal-dialog-margin !global; // .5rem
     // $modal-dialog-margin-y-sm-up: 1.75rem; $modal-dialog-margin-y-sm-up: $modal-dialog-margin-y-sm-up !global; // 1.75rem
 
@@ -982,6 +999,7 @@
     // $modal-content-border-color: rgba($black, .2); $modal-content-border-color: $modal-content-border-color !global; // rgba($black, .2)
     // $modal-content-border-width: $border-width; $modal-content-border-width: $modal-content-border-width !global; // $border-width
     // $modal-content-border-radius: $border-radius-lg; $modal-content-border-radius: $modal-content-border-radius !global; // $border-radius-lg
+    // $modal-content-inner-border-radius: subtract($modal-content-border-radius, $modal-content-border-width); $modal-content-inner-border-radius: modal-content-inner-border-radius !global; // subtract($modal-content-border-radius, $modal-content-border-width)
     // $modal-content-box-shadow-xs: 0 .25rem .5rem rgba($black, .5); $modal-content-box-shadow-xs: $modal-content-box-shadow-xs !global; // 0 .25rem .5rem rgba($black, .5)
     // $modal-content-box-shadow-sm-up: 0 .5rem 1rem rgba($black, .5); $modal-content-box-shadow-sm-up: $modal-content-box-shadow-sm-up !global; // 0 .5rem 1rem rgba($black, .5)
 
@@ -1003,6 +1021,7 @@
     // $modal-fade-transform: translate(0, -50px); $modal-fade-transform: $modal-fade-transform !global; // translate(0, -50px)
     // $modal-show-transform: none; $modal-show-transform: $modal-show-transform !global; // none
     // $modal-transition: transform .3s ease-out; $modal-transition: $modal-transition !global; // transform .3s ease-out
+    // $modal-scale-transform: scale(1.02); $modal-scale-transform: $modal-scale-transform !global; // scale(1.02)
 
 
     // Alerts
@@ -1078,6 +1097,7 @@
 
     // Breadcrumbs
 
+    // $breadcrumb-font-size: null; $breadcrumb-font-size: $breadcrumb-font-size !global; // null
     // $breadcrumb-padding-y: .75rem; $breadcrumb-padding-y: $breadcrumb-padding-y !global; // .75rem
     // $breadcrumb-padding-x: 1rem; $breadcrumb-padding-x: $breadcrumb-padding-x !global; // 1rem
     // $breadcrumb-item-padding: .5rem; $breadcrumb-item-padding: $breadcrumb-item-padding !global; // .5rem
@@ -1112,8 +1132,8 @@
 
     // $carousel-control-icon-width: 20px; $carousel-control-icon-width: $carousel-control-icon-width !global; // 20px
 
-    // $carousel-control-prev-icon-bg: str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3e%3cpath D='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e"), "#", "%23"); $carousel-control-prev-icon-bg: $carousel-control-prev-icon-bg !global; // str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e"), "#", "%23")
-    // $carousel-control-next-icon-bg: str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3e%3cpath D='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e"), "#", "%23"); $carousel-control-next-icon-bg: $carousel-control-next-icon-bg !global; // str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e"), "#", "%23")
+    // $carousel-control-prev-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' width='8' height='8' viewBox='0 0 8 8'><path d='M5.25 0l-4 4 4 4 1.5-1.5L4.25 4l2.5-2.5L5.25 0z'/></svg>"); $carousel-control-prev-icon-bg: $carousel-control-prev-icon-bg !global; // url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' width='8' height='8' viewBox='0 0 8 8'><path d='M5.25 0l-4 4 4 4 1.5-1.5L4.25 4l2.5-2.5L5.25 0z'/></svg>")
+    // $carousel-control-next-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' width='8' height='8' viewBox='0 0 8 8'><path d='M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z'/></svg>"); $carousel-control-next-icon-bg: $carousel-control-next-icon-bg !global; // url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' width='8' height='8' viewBox='0 0 8 8'><path d='M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z'/></svg>")
 
     // $carousel-transition-duration: .6s; $carousel-transition-duration: $carousel-transition-duration !global; // .6s
     // $carousel-transition: transform $carousel-transition-duration ease-in-out; $carousel-transition: $carousel-transition !global; // transform $carousel-transition-duration ease-in-out // Define transform transition first if using multiple transitions (e.g., `transform 2s ease, opacity .5s ease-out`)
