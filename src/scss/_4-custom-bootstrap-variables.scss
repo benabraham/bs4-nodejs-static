@@ -582,7 +582,7 @@
     // $custom-control-indicator-box-shadow: $input-box-shadow; $custom-control-indicator-box-shadow: $custom-control-indicator-box-shadow !global; // $input-box-shadow
     // $custom-control-indicator-border-color: $gray-500; $custom-control-indicator-border-color: $custom-control-indicator-border-color !global; // $gray-500
     // $custom-control-indicator-border-width: $input-border-width; $custom-control-indicator-border-width: $custom-control-indicator-border-width !global; // $input-border-width
-    // custom-control-label-color-width: null; custom-control-label-color-width: custom-control-label-color-width !global; // null
+    // $custom-control-label-color-width: null; $custom-control-label-color-width: $custom-control-label-color-width !global; // null
 
     // $custom-control-indicator-disabled-bg: $input-disabled-bg; $custom-control-indicator-disabled-bg: $custom-control-indicator-disabled-bg !global; // $input-disabled-bg
     // $custom-control-label-disabled-color: $gray-600; $custom-control-label-disabled-color: $custom-control-label-disabled-color !global; // $gray-600
@@ -881,7 +881,7 @@
     // $card-inner-border-radius: subtract($card-border-radius, $card-border-width); $card-inner-border-radius: $card-inner-border-radius !global; // subtract($card-border-radius, $card-border-width)
     // $card-cap-bg: rgba($black, .03); $card-cap-bg: $card-cap-bg !global; // rgba($black, .03)
     // $card-cap-color: null; $card-cap-color: $card-cap-color !global; // null
-    // card-height: null; card-height: card-height !global; // null
+    // $card-height: null; $card-height: $card-height !global; // null
     // $card-color: null; $card-color: $card-color !global; // null
     // $card-bg: $white; $card-bg: $card-bg !global; // $white
 
