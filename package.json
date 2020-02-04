@@ -7,7 +7,7 @@
   },
   "main": "index.js",
   "devDependencies": {
-    "autoprefixer": "^9.7.3",
+    "autoprefixer": "^9.7.4",
     "bootstrap": "^4.4.1",
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
@@ -18,7 +18,7 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-twig": "^1.2.0",
     "gulp-watch": "^5.0.1",
-    "postcss-flexbugs-fixes": "^4.1.0",
+    "postcss-flexbugs-fixes": "^4.2.0",
     "postcss-uncss": "^0.17.0",
     "prettier": "1.19.1",
     "surge": "^0.21.3",
