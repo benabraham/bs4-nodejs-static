@@ -17,12 +17,12 @@ var fs = require("fs");
 gulp.task(
     "html:compile",
     gulp.series(
+        // Delete all HTML files in dist folder
         function htmlCleanup() {
-            // Delete all HTML files in dist folder
             return del("dist/**/*.html", { force: true });
         },
+        // compile twig templates to html files
         function twigCompile() {
-            // compile twig templates to html files
             return gulp
                 .src("src/templates/**/[^_]*.twig")
                 .pipe(twig({ data: JSON.parse(fs.readFileSync("src/data.json")) })) // import from data.json
@@ -39,10 +39,11 @@ gulp.task(
 gulp.task(
     "css:compile",
     gulp.series(
+        // Delete all CSS files in dist folder
         function cssCleanup() {
-            // Delete all CSS files in dist folder
             return del(["dist/*.css", "dist/*.map"], { force: true });
         },
+        // Create and process CSS
         function compileCss() {
             return gulp
                 .src("src/scss/index.scss") // this is the source of for compilation
@@ -69,8 +70,8 @@ gulp.task(
 gulp.task(
     "static:copy",
     gulp.series(
+        // Delete static files
         function staticCleanup() {
-            // Static files cleanup
             return del(
                 [
                     "dist/**/*", // delete all files from /src/
@@ -81,6 +82,7 @@ gulp.task(
                 { force: true }
             );
         },
+        // Copy static files
         function staticCopy() {
             return gulp
                 .src("src/static/**/*")
@@ -96,31 +98,33 @@ gulp.task(
 // Development with automatic refreshing
 gulp.task(
     "develop",
-    gulp.series(gulp.parallel("html:compile", "css:compile", "static:copy"), function startBrowsersync() {
-        browserSync.init({
+    gulp.series(
+        gulp.parallel("html:compile", "css:compile", "static:copy"),
+        function startBrowsersync() {
             // initalize Browsersync
-            // set what files be served
-            server: {
-                baseDir: "dist", // serve from this folder
-                serveStaticOptions: {
-                    // trying an extension when one isn't specified:
-                    // effectively means that http://localhost:3000/another-page
-                    // shows file named another-page.html
-                    extensions: ["html"]
+            browserSync.init({
+                // set what files be served
+                server: {
+                    baseDir: "dist", // serve from this folder
+                    serveStaticOptions: {
+                        // trying an extension when one isn't specified:
+                        // effectively means that http://localhost:3000/another-page
+                        // shows file named another-page.html
+                        extensions: ["html"]
+                    }
                 }
-            }
-        });
-        gulp.watch("src/scss/**/*", gulp.series("css:compile")); // watch for changes in SCSS
-        gulp.watch("src/templates/**/*", gulp.series("html:compile")); // watch for changes in templates
-        gulp.watch("src/static/**/*", gulp.series("static:copy")); // watch for changes in static files
-    })
+            });
+            gulp.watch("src/scss/**/*", gulp.series("css:compile")); // watch for changes in SCSS
+            gulp.watch("src/templates/**/*", gulp.series("html:compile")); // watch for changes in templates
+            gulp.watch("src/static/**/*", gulp.series("static:copy")); // watch for changes in static files
+        })
 );
 
 // Build everything for production
 gulp.task(
     "build",
     gulp.series(
-        "html:compile", // first compile HTML
+        "html:compile",
         gulp.parallel("css:compile", "static:copy"),
         // remove CSS that isn’t used in generated HTML files
         function useUncss() {
