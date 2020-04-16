@@ -27,7 +27,7 @@ gulp.task(
                 .src("src/templates/**/[^_]*.twig")
                 .pipe(twig({ data: JSON.parse(fs.readFileSync("src/data.json")) })) // import from data.json
                 .pipe(gulp.dest("./dist/")) // where to put compiled html
-                .on("end", function() {
+                .on("end", function () {
                     // after compilation finishes…
                     browserSync.reload(); // … tell Browsersync to reload
                 });
@@ -55,7 +55,7 @@ gulp.task(
                         // see browserslist in package.json for included browsers
                         // Official Bootstrap browser support policy:
                         // https://getbootstrap.com/docs/4.1/getting-started/browsers-devices/#supported-browsers
-                        require("postcss-flexbugs-fixes") // fixes flex bugs if possible: see https://github.com/philipwalton/flexbugs
+                        require("postcss-flexbugs-fixes"), // fixes flex bugs if possible: see https://github.com/philipwalton/flexbugs
                     ])
                 )
                 .pipe(csso()) // compresses CSS
@@ -77,7 +77,7 @@ gulp.task(
                     "dist/**/*", // delete all files from /src/
                     "!dist/**/*.html", // except HTML files
                     "!dist/**/*.css", // CSS and
-                    "!dist/**/*.map" // and sourcemaps
+                    "!dist/**/*.map", // and sourcemaps
                 ],
                 { force: true }
             );
@@ -87,7 +87,7 @@ gulp.task(
             return gulp
                 .src("src/static/**/*")
                 .pipe(gulp.dest("dist"))
-                .on("end", function() {
+                .on("end", function () {
                     // after copying finishes…
                     browserSync.reload(); // … tell Browsersync to reload
                 });
@@ -98,26 +98,24 @@ gulp.task(
 // Development with automatic refreshing
 gulp.task(
     "develop",
-    gulp.series(
-        gulp.parallel("html:compile", "css:compile", "static:copy"),
-        function startBrowsersync() {
-            // initalize Browsersync
-            browserSync.init({
-                // set what files be served
-                server: {
-                    baseDir: "dist", // serve from this folder
-                    serveStaticOptions: {
-                        // trying an extension when one isn't specified:
-                        // effectively means that http://localhost:3000/another-page
-                        // shows file named another-page.html
-                        extensions: ["html"]
-                    }
-                }
-            });
-            gulp.watch("src/scss/**/*", gulp.series("css:compile")); // watch for changes in SCSS
-            gulp.watch("src/templates/**/*", gulp.series("html:compile")); // watch for changes in templates
-            gulp.watch("src/static/**/*", gulp.series("static:copy")); // watch for changes in static files
-        })
+    gulp.series(gulp.parallel("html:compile", "css:compile", "static:copy"), function startBrowsersync() {
+        // initalize Browsersync
+        browserSync.init({
+            // set what files be served
+            server: {
+                baseDir: "dist", // serve from this folder
+                serveStaticOptions: {
+                    // trying an extension when one isn't specified:
+                    // effectively means that http://localhost:3000/another-page
+                    // shows file named another-page.html
+                    extensions: ["html"],
+                },
+            },
+        });
+        gulp.watch("src/scss/**/*", gulp.series("css:compile")); // watch for changes in SCSS
+        gulp.watch("src/templates/**/*", gulp.series("html:compile")); // watch for changes in templates
+        gulp.watch("src/static/**/*", gulp.series("static:copy")); // watch for changes in static files
+    })
 );
 
 // Build everything for production
@@ -133,8 +131,8 @@ gulp.task(
                     uncss({
                         html: ["dist/**/*.html"],
                         media: ["print"], // process additional media queries
-                        ignore: [] // provide a list of selectors that should not be removed by UnCSS
-                    })
+                        ignore: [], // provide a list of selectors that should not be removed by UnCSS
+                    }),
                 ])
             );
         }

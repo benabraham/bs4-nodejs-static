@@ -7,7 +7,7 @@
   },
   "main": "index.js",
   "devDependencies": {
-    "autoprefixer": "^9.7.4",
+    "autoprefixer": "^9.7.6",
     "bootstrap": "4.4.x",
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
@@ -19,9 +19,9 @@
     "gulp-twig": "^1.2.0",
     "postcss-flexbugs-fixes": "^4.2.0",
     "postcss-uncss": "^0.17.0",
-    "prettier": "1.19.1",
+    "prettier": "2.0.4",
     "surge": "^0.21.3",
-    "uncss": "^0.17.2"
+    "uncss": "^0.17.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

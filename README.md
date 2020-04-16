@@ -2,18 +2,17 @@
 
 Includes:
 
-- **Bootstrap 4**: build responsive, mobile-first projects on the web with the world's most popular front-end component library
-- **Gulp 4**: task runner for running all of the following
-- **Sass compilation**: leverage the power of the most popular CSS extension language
-- **Sourcemaps** generation for easier Sass debugging
-- **Browsersync**: automatically reloads (or injects in case of CSS), browsers' when you change files 
-- **Autoprefixer**: parses CSS and adds vendor prefixes according to [caniuse.com]()
-- **UnCSS**: removes unused styles from CSS
-- **Flexbugs fixes**: automatically fixes some of the [flexbugs](https://github.com/philipwalton/flexbugs) 
-- **CSSO**: CSS minifier with structural optimizations
-- **Twig.js**: JavaScript implementation of the Twig PHP templating language
-- **Surge.sh**: deploy static websites easily and for free
-
+-   **Bootstrap 4**: build responsive, mobile-first projects on the web with the world's most popular front-end component library
+-   **Gulp 4**: task runner for running all of the following
+-   **Sass compilation**: leverage the power of the most popular CSS extension language
+-   **Sourcemaps** generation for easier Sass debugging
+-   **Browsersync**: automatically reloads (or injects in case of CSS), browsers' when you change files
+-   **Autoprefixer**: parses CSS and adds vendor prefixes according to [caniuse.com]()
+-   **UnCSS**: removes unused styles from CSS
+-   **Flexbugs fixes**: automatically fixes some of the [flexbugs](https://github.com/philipwalton/flexbugs)
+-   **CSSO**: CSS minifier with structural optimizations
+-   **Twig.js**: JavaScript implementation of the Twig PHP templating language
+-   **Surge.sh**: deploy static websites easily and for free
 
 ## First time installation
 
@@ -41,7 +40,7 @@ And see the result on `http://localhost:3000/`
 
 To build everything once for production deploy (in `/dist/` folder)
 
-This build uses all generated HTML files for _UnCSS_. If it removes something you need to keep, add and array to `ignore` option in `gulpfile.js`.  
+This build uses all generated HTML files for _UnCSS_. If it removes something you need to keep, add and array to `ignore` option in `gulpfile.js`.
 
 ```shell
 npm run build
@@ -53,12 +52,11 @@ npm run build
 
 You don't know _Scss_ syntax or don't want to use it? Just use plain CSS in `src/scss/_base.scss`.
 
-
 ## HTML (Twig templates)
 
 HTML is generated from [Twig.js](https://github.com/twigjs/twig.js/) templates (JavaScript impementation of Twig templating language) in `src/templates`.
 
-You don't need to leverage the power of templates. You can just create plain HTML files with `*.twig` extension.  
+You don't need to leverage the power of templates. You can just create plain HTML files with `*.twig` extension.
 
 If you don't want a template to be turned into HTML file start it with `_`. Typically these are templates used for _include_ or _extend_.
 
@@ -68,11 +66,9 @@ _Warning: [Twig.js doesn't implement 100% of Twig](https://github.com/twigjs/twi
 
 If you need some data to be available in all templates, use `templates/data.json` for that.
 
-
 ## Static files (JavaScript, images, …)
 
 Folders and files from `/src/static/` are simply copied directly to `/dist/` folder.
-
 
 ### Bootstrap
 
@@ -81,7 +77,6 @@ You can comment out Bootstrap components you don't need in `/src/index.scss`.
 `/src/_custom-bootstrap-variables.scss` contains only customized Bootstrap variables.
 
 See `browserslist` in `package.json` for supported browsers.
-
 
 ### Deployment
 
@@ -96,4 +91,3 @@ You can use [surge.sh](https://surge.sh) free service for that.
 1. From now on run `npm run deploy` whenever you want to publish a new version.
 
 If you want multiple people to be able to deploy to the same domain, run `surge --add mail.your.collaborator.used.to.register.with.surge@example.com` for each.
- 
