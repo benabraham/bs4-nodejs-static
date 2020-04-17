@@ -1,0 +1,143 @@
+// FIRST LOAD EVERYTHING NEEDED…
+const { series, parallel, src, dest, watch } = require("gulp"),
+    fs = require("fs"),
+    del = require("del"),
+    sass = require("gulp-sass"),
+    sourcemaps = require("gulp-sourcemaps"),
+    postcss = require("gulp-postcss"),
+    autoprefixer = require("autoprefixer"),
+    flexbugsFixes = require("postcss-flexbugs-fixes"),
+    uncss = require("postcss-uncss"),
+    csso = require("gulp-csso"),
+    twig = require("gulp-twig"),
+    browserSync = require("browser-sync").create();
+
+const extraData = JSON.parse(fs.readFileSync("src/data.json"));
+
+// DEFINE FUNCTIONS
+
+// functions to delete parts of generated files in dist folder
+
+// delete all HTML files
+const htmlCleanup = () => {
+    return del("dist/**/*.html", { force: true });
+};
+
+// delete all CSS files
+const cssCleanup = () => {
+    return del(
+        [
+            "dist/*.css", // delete all css files
+            "dist/*.css.map", // delete CSS sourcemaps too
+        ],
+        { force: true }
+    );
+};
+
+// delete static files
+const staticCleanup = () => {
+    return del(
+        [
+            "dist/**/*", // delete all files from /src/
+            "!dist/**/*.html", // except HTML files
+            "!dist/**/*.css", // and except CSS
+            "!dist/**/*.css.map", // and except CSS sourcemaps
+        ],
+        { force: true }
+    );
+};
+
+// functions that generate files
+
+// compile twig templates to html files
+const twigCompile = () => {
+    return (
+        src("src/templates/**/[^_]*.twig")
+            // import data from data.json
+            .pipe(twig({ data: extraData }))
+            .pipe(dest("./dist/")) // put compiled html into dist folder
+            // tell Browsersync to reload after compiling finishes
+            .on("end", () => browserSync.reload())
+    );
+};
+
+// create and process CSS
+const sassCompile = () => {
+    return src("src/scss/index.scss") // this is the source of for compilation
+        .pipe(sourcemaps.init()) // initalizes a sourcemap
+        .pipe(sass().on("error", sass.logError)) // compile SCSS to CSS and also tell us about a problem if happens
+        .pipe(
+            postcss([
+                autoprefixer, // automatically adds vendor prefixes if needed
+                // see browserslist in package.json for included browsers
+                // Official Bootstrap browser support policy:
+                // https://getbootstrap.com/docs/4.4/getting-started/browsers-devices/#supported-browsers
+                flexbugsFixes, // fixes flex bugs if possible: see https://github.com/philipwalton/flexbugs
+            ])
+        )
+        .pipe(csso()) // compresses CSS
+        .pipe(sourcemaps.write("./")) // writes the sourcemap
+        .pipe(dest("./dist")) // destination of the resulting CSS
+        .pipe(browserSync.stream()); // tell browsersync to inject compiled CSS
+};
+
+// remove unused CSS (classes not used in generated HTML)
+const removeUnusedCss = () => {
+    return src("dist/index.css").pipe(
+        postcss([
+            uncss({
+                html: ["dist/**/*.html"],
+                media: ["print"], // process additional media queries
+                ignore: [], // provide a list of selectors that should not be removed by UnCSS
+            }),
+        ])
+    );
+};
+
+// copy all files from /src/static/ to /dist/static/
+const copyStatic = () => {
+    return (
+        src("src/static/**/*")
+            .pipe(dest("dist"))
+            // tell Browsersync to reload after copying finishes
+            .on("end", () => browserSync.reload())
+    );
+};
+
+// development with automatic refreshing after changes to CSS, templates or static files
+const startBrowsersync = () => {
+    // initalize Browsersync
+    browserSync.init({
+        // set what files be served
+        server: {
+            baseDir: "dist", // serve from this folder
+            serveStaticOptions: {
+                // trying an extension when one isn't specified:
+                // effectively means that http://localhost:3000/another-page
+                // shows file named another-page.html
+                extensions: ["html"],
+            },
+        },
+    });
+    watch("src/scss/**/*", series(processCss)); // watch for changes in SCSS
+    watch("src/templates/**/*", series(processHtml)); // watch for changes in templates
+    watch("src/static/**/*", series(processStatic)); // watch for changes in static files
+};
+
+// COMPOSE TASKS
+
+const processHtml = series(htmlCleanup, twigCompile);
+
+const processCss = series(cssCleanup, sassCompile);
+
+const processStatic = series(staticCleanup, copyStatic);
+
+// PUBLICLY AVAILABLE TASKS
+// These tasks can be run with `npx gulp TASKNAME` on command line for example `npx gulp develop`.
+// We use them in npm scripts with `gulp TASKNAME` (see package.json).
+
+// development with automatic refreshing
+exports.develop = series(parallel(processHtml, processCss, processStatic), startBrowsersync);
+
+// build everything for production
+exports.build = series(processHtml, parallel(processCss, processStatic), removeUnusedCss);

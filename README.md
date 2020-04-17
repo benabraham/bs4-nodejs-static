@@ -40,7 +40,7 @@ And see the result on `http://localhost:3000/`
 
 To build everything once for production deploy (in `/dist/` folder)
 
-This build uses all generated HTML files for _UnCSS_. If it removes something you need to keep, add and array to `ignore` option in `gulpfile.js`.
+This build uses all generated HTML files for _UnCSS_. If it removes something you need to keep, add and array to `ignore` option in `gulpfile.esm.js`.
 
 ```shell
 npm run build
