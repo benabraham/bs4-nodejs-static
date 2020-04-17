@@ -1,6 +1,6 @@
 // FIRST LOAD EVERYTHING NEEDED…
 const { series, parallel, src, dest, watch } = require("gulp"),
-    fs = require("fs"),
+    { readFileSync } = require("fs"),
     del = require("del"),
     sass = require("gulp-sass"),
     sourcemaps = require("gulp-sourcemaps"),
@@ -11,8 +11,6 @@ const { series, parallel, src, dest, watch } = require("gulp"),
     csso = require("gulp-csso"),
     twig = require("gulp-twig"),
     browserSync = require("browser-sync").create();
-
-const extraData = JSON.parse(fs.readFileSync("src/data.json"));
 
 // DEFINE FUNCTIONS
 
@@ -54,7 +52,7 @@ const twigCompile = () => {
     return (
         src("src/templates/**/[^_]*.twig")
             // import data from data.json
-            .pipe(twig({ data: extraData }))
+            .pipe(twig({ data: JSON.parse(String(readFileSync("src/data.json"))) }))
             .pipe(dest("./dist/")) // put compiled html into dist folder
             // tell Browsersync to reload after compiling finishes
             .on("end", () => browserSync.reload())
@@ -119,9 +117,12 @@ const startBrowsersync = () => {
             },
         },
     });
-    watch("src/scss/**/*", series(processCss)); // watch for changes in SCSS
-    watch("src/templates/**/*", series(processHtml)); // watch for changes in templates
-    watch("src/static/**/*", series(processStatic)); // watch for changes in static files
+    // watch for changes in SCSS and run task to compile it again
+    watch("src/scss/**/*", series(processCss));
+    // watch for changes in templates and data file and run task to generate HTML again
+    watch(["src/templates/**/*", "src/data.json"], series(processHtml));
+    // watch for changes in static files and run task to copy them again
+    watch("src/static/**/*", series(processStatic));
 };
 
 // COMPOSE TASKS
