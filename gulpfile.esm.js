@@ -22,7 +22,7 @@ const allCleanup = () => del("dist/**/*");
 // delete all HTML files
 const htmlCleanup = () => del("dist/**/*.html");
 
-// delete all CSS files
+// delete all CSS files and their sourcemaps
 const cssCleanup = () => del("dist/*.{css,css.map}");
 
 // delete static files
