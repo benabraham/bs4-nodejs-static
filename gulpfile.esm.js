@@ -16,32 +16,23 @@ const { series, parallel, src, dest, watch } = require("gulp"),
 
 // functions to delete parts of generated files in dist folder
 
+// delete all files
+const allCleanup = () => del("dist/**/*");
+
 // delete all HTML files
-const htmlCleanup = () => {
-    return del("dist/**/*.html", { force: true });
-};
+const htmlCleanup = () => del("dist/**/*.html");
 
 // delete all CSS files
-const cssCleanup = () => {
-    return del(
-        [
-            "dist/*.css", // delete all css files
-            "dist/*.css.map", // delete CSS sourcemaps too
-        ],
-        { force: true }
-    );
-};
+const cssCleanup = () => del("dist/*.{css,css.map}");
 
 // delete static files
 const staticCleanup = () => {
     return del(
         [
-            "dist/**/*", // delete all files from /src/
-            "!dist/**/*.html", // except HTML files
-            "!dist/**/*.css", // and except CSS
-            "!dist/**/*.css.map", // and except CSS sourcemaps
+            "dist/**/*", // delete all files from /dist/
+            "!dist/**/*.{html,css,css.map}", // except HTML, CSS and CSS map files
         ],
-        { force: true }
+        { onlyFiles: true } // do not delete folders (would delete all folders otherwise)
     );
 };
 
@@ -139,7 +130,7 @@ const processStatic = series(staticCleanup, copyStatic);
 // We use them in npm scripts with `gulp TASKNAME` (see package.json).
 
 // development with automatic refreshing
-exports.develop = series(parallel(processHtml, processCss, processStatic), startBrowsersync);
+exports.develop = series(allCleanup, parallel(twigCompile, sassCompile, copyStatic), startBrowsersync);
 
 // build everything for production
-exports.build = series(processHtml, parallel(processCss, processStatic), removeUnusedCss);
+exports.build = series(allCleanup, twigCompile, parallel(sassCompile, copyStatic), removeUnusedCss);
