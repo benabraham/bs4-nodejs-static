@@ -43,7 +43,7 @@ const twigCompile = () => {
     return (
         src("src/templates/**/[^_]*.twig")
             // import data from data.json
-            .pipe(twig({ data: JSON.parse(String(readFileSync("src/data.json"))) }))
+            .pipe(twig({ cache: false, data: JSON.parse(String(readFileSync("src/data.json"))) }))
             .pipe(dest("./dist/")) // put compiled html into dist folder
             // tell Browsersync to reload after compiling finishes
             .on("end", () => browserSync.reload())
