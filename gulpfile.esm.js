@@ -106,8 +106,9 @@ const copyStatic = () => {
 const startBrowsersync = () => {
     // initalize Browsersync
     browserSync.init({
-        // set what files be served
         server: {
+            // port: 8080, // set different port
+            // open: false, // don’t open browser
             baseDir: "dist", // serve from this folder
             serveStaticOptions: {
                 // trying an extension when one isn't specified:
