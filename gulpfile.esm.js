@@ -72,15 +72,17 @@ const sassCompile = () => {
 
 // remove unused CSS (classes not used in generated HTML)
 const removeUnusedCss = () => {
-    return src("dist/index.css").pipe(
-        postcss([
-            uncss({
-                html: ["dist/**/*.html"],
-                media: ["print"], // process additional media queries
-                ignore: [], // provide a list of selectors that should not be removed by UnCSS
-            }),
-        ])
-    );
+    return src("dist/index.css")
+        .pipe(
+            postcss([
+                uncss({
+                    html: ["dist/**/*.html"],
+                    media: ["print"], // process additional media queries
+                    ignore: [], // provide a list of selectors that should not be removed by UnCSS
+                }),
+            ])
+        )
+        .pipe(dest("dist"));
 };
 
 // copy all files from /src/static/ to /dist/static/
