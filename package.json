@@ -32,7 +32,15 @@
   },
   "prettier": {
     "tabWidth": 4,
-    "printWidth": 120
+    "printWidth": 120,
+    "overrides": [
+      {
+        "files": "*.json",
+        "options": {
+          "tabWidth": 2
+        }
+      }
+    ]
   },
   "author": "Daniel Srb",
   "license": "MIT",
