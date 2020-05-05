@@ -102,6 +102,8 @@ const startBrowsersync = () => {
         server: {
             // port: 8080, // set different port
             // open: false, // don’t open browser
+            // ghostMode: false, // CLICKS, scrolls & form inputs on any device will not be mirrored to all others
+            // reloadOnRestart: true, // reload each browser when Browsersync is restarted
             baseDir: "dist", // serve from this folder
             serveStaticOptions: {
                 // trying an extension when one isn't specified:
