@@ -138,3 +138,6 @@ exports.develop = series(allCleanup, parallel(twigCompile, sassCompile, copyStat
 
 // build everything for production
 exports.build = series(allCleanup, twigCompile, parallel(sassCompile, copyStatic), removeUnusedCss);
+
+// the default task runs when you run just `gulp`
+exports.default = exports.develop;
