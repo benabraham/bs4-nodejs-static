@@ -151,6 +151,8 @@
     //        ("<","%3c"),
     //        (">","%3e"),
     //        ("#","%23"),
+    //        ("(","%28"),
+    //        (")","%29"),
     ); $escaped-characters: $escaped-characters !global;
     */
 
@@ -830,6 +832,7 @@
     // $dropdown-item-padding-x: 1.5rem; $dropdown-item-padding-x: $dropdown-item-padding-x !global; // 1.5rem
 
     // $dropdown-header-color: $gray-600; $dropdown-header-color: $dropdown-header-color !global; // $gray-600
+    // $dropdown-header-padding: $dropdown-padding-y $dropdown-item-padding-x; $dropdown-header-padding: $dropdown-header-padding !global; // $dropdown-padding-y $dropdown-item-padding-x
 
 
     // Pagination
@@ -1177,7 +1180,7 @@
     // $displays: none, inline, inline-block, block, table, table-row, table-cell, flex, inline-flex; $displays: $displays !global; // none, inline, inline-block, block, table, table-row, table-cell, flex, inline-flex
     // $overflows: auto, hidden; $overflows: $overflows !global; // auto, hidden
     // $positions: static, relative, absolute, fixed, sticky; $positions: $positions !global; // static, relative, absolute, fixed, sticky
-
+    // $user-selects: all, auto, none; $user-selects: $user-selects !global; // all, auto, none
 
     // Printing
 
