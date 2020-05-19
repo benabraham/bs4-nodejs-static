@@ -36,9 +36,11 @@
 // `^\$([a-z0-9-]+):(\s+)(.*)(\s+)!default;` => `// \$$1: $3; \$$1: \$$1 !global; // $3`
 // Complex structures as maps etc. must be edited manually.
 
+@import "bootstrap-variables-init"; // init all variables so dart sass doesn’t throw deprecation warnings
+
 %custom-bootstrap-variables {
-    @import "./node_modules/bootstrap/scss/functions";
-    @import "./node_modules/bootstrap/scss/variables";
+    @import "node_modules/bootstrap/scss/functions";
+    @import "node_modules/bootstrap/scss/variables";
 
     // Variables
     //
@@ -47,17 +49,17 @@
 
     // Color system
 
-    // $white: #fff; $white: $white !global; // #fff
-    // $gray-100: #f8f9fa; $gray-100: $gray-100 !global; // #f8f9fa
-    // $gray-200: #e9ecef; $gray-200: $gray-200 !global; // #e9ecef
-    // $gray-300: #dee2e6; $gray-300: $gray-300 !global; // #dee2e6
-    // $gray-400: #ced4da; $gray-400: $gray-400 !global; // #ced4da
-    // $gray-500: #adb5bd; $gray-500: $gray-500 !global; // #adb5bd
-    // $gray-600: #6c757d; $gray-600: $gray-600 !global; // #6c757d
-    // $gray-700: #495057; $gray-700: $gray-700 !global; // #495057
-    // $gray-800: #343a40; $gray-800: $gray-800 !global; // #343a40
-    // $gray-900: #212529; $gray-900: $gray-900 !global; // #212529
-    // $black: #000; $black: $black !global; // #000
+     $white: #fff; $white: $white !global; // #fff
+     $gray-100: #f8f9fa; $gray-100: $gray-100 !global; // #f8f9fa
+     $gray-200: #e9ecef; $gray-200: $gray-200 !global; // #e9ecef
+     $gray-300: #dee2e6; $gray-300: $gray-300 !global; // #dee2e6
+     $gray-400: #ced4da; $gray-400: $gray-400 !global; // #ced4da
+     $gray-500: #adb5bd; $gray-500: $gray-500 !global; // #adb5bd
+     $gray-600: #6c757d; $gray-600: $gray-600 !global; // #6c757d
+     $gray-700: #495057; $gray-700: $gray-700 !global; // #495057
+     $gray-800: #343a40; $gray-800: $gray-800 !global; // #343a40
+     $gray-900: #212529; $gray-900: $gray-900 !global; // #212529
+     $black: #000; $black: $black !global; // #000
 
     // uncomment whole block, the following variable uses map-merge(),
     // so you can define only new ones you need

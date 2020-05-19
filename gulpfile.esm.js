@@ -2,7 +2,7 @@
 const { series, parallel, src, dest, watch } = require("gulp"),
     { readFileSync } = require("fs"),
     del = require("del"),
-    sass = require("gulp-sass"),
+    sass = require("gulp-dart-sass"),
     sourcemaps = require("gulp-sourcemaps"),
     postcss = require("gulp-postcss"),
     autoprefixer = require("autoprefixer"),
@@ -54,7 +54,7 @@ const twigCompile = () => {
 const sassCompile = () => {
     return src("src/scss/index.scss") // this is the source of for compilation
         .pipe(sourcemaps.init()) // initalizes a sourcemap
-        .pipe(sass().on("error", sass.logError)) // compile SCSS to CSS and also tell us about a problem if happens
+        .pipe(sass.sync().on("error", sass.logError)) // compile SCSS to CSS and also tell us about a problem if happens
         .pipe(
             postcss([
                 autoprefixer, // automatically adds vendor prefixes if needed
