@@ -64,7 +64,7 @@
     // uncomment whole block, the following variable uses map-merge(),
     // so you can define only new ones you need
     /*
-    // stylelint-disable-next-line scss/dollar-variable-default
+
     $grays: (
     //        "100": $gray-100,
     //        "200": $gray-200,
@@ -91,7 +91,7 @@
     // uncomment whole block, the following variable uses map-merge(),
     // so you can define only new ones you need
     /*
-    // stylelint-disable-next-line scss/dollar-variable-default
+
     $colors: (
     //        "blue": $blue,
     //        "indigo": $indigo,
@@ -121,7 +121,7 @@
     // uncomment whole block, the following variable uses map-merge(),
     // so you can define only new ones you need
     /*
-    // stylelint-disable-next-line scss/dollar-variable-default
+
     $theme-colors: (
     //        "primary": $primary,
     //        "secondary": $secondary,
@@ -150,11 +150,11 @@
     // so you can define only new ones you need
     /*
     $escaped-characters: (
-    //        ("<","%3c"),
-    //        (">","%3e"),
-    //        ("#","%23"),
-    //        ("(","%28"),
-    //        (")","%29"),
+    //        ("<", "%3c"),
+    //        (">", "%3e"),
+    //        ("#", "%23"),
+    //        ("(", "%28"),
+    //        (")", "%29"),
     ); $escaped-characters: $escaped-characters !global;
     */
 
@@ -187,7 +187,7 @@
     // uncomment whole block, the following variable uses map-merge(),
     // so you can define only new ones you need
     /*
-    // stylelint-disable-next-line scss/dollar-variable-default
+
     $spacers: (
     //        0: 0,
     //        1: ($spacer * .25),
@@ -202,7 +202,7 @@
     // uncomment whole block, the following variable uses map-merge(),
     // so you can define only new ones you need
     /*
-    // stylelint-disable-next-line scss/dollar-variable-default
+
     $sizes: (
     //        25: 25%,
     //        50: 50%,
@@ -593,7 +593,7 @@
     // $custom-control-indicator-checked-color: $component-active-color; $custom-control-indicator-checked-color: $custom-control-indicator-checked-color !global; // $component-active-color
     // $custom-control-indicator-checked-bg: $component-active-bg; $custom-control-indicator-checked-bg: $custom-control-indicator-checked-bg !global; // $component-active-bg
     // $custom-control-indicator-checked-disabled-bg: rgba(theme-color("primary"), .5); $custom-control-indicator-checked-disabled-bg: $custom-control-indicator-checked-disabled-bg !global; // rgba(theme-color("primary"), .5)
-    // $custom-control-indicator-checked-box-shadow: none; $custom-control-indicator-checked-box-shadow: $custom-control-indicator-checked-box-shadow !global; // none
+    // $custom-control-indicator-checked-box-shadow: null; $custom-control-indicator-checked-box-shadow: null $custom-control-indicator-checked-box-shadow !global; // null
     // $custom-control-indicator-checked-border-color: $custom-control-indicator-checked-bg; $custom-control-indicator-checked-border-color: $custom-control-indicator-checked-border-color !global; // $custom-control-indicator-checked-bg
 
     // $custom-control-indicator-focus-box-shadow: $input-focus-box-shadow; $custom-control-indicator-focus-box-shadow: $custom-control-indicator-focus-box-shadow !global; // $input-focus-box-shadow
@@ -601,7 +601,7 @@
 
     // $custom-control-indicator-active-color: $component-active-color; $custom-control-indicator-active-color: $custom-control-indicator-active-color !global; // $component-active-color
     // $custom-control-indicator-active-bg: lighten($component-active-bg, 35%); $custom-control-indicator-active-bg: $custom-control-indicator-active-bg !global; // lighten($component-active-bg, 35%)
-    // $custom-control-indicator-active-box-shadow: none; $custom-control-indicator-active-box-shadow: $custom-control-indicator-active-box-shadow !global; // none
+    // $custom-control-indicator-active-box-shadow: null; $custom-control-indicator-active-box-shadow: $custom-control-indicator-active-box-shadow !global; // null
     // $custom-control-indicator-active-border-color: $custom-control-indicator-active-bg; $custom-control-indicator-active-border-color: $custom-control-indicator-active-border-color !global; // $custom-control-indicator-active-bg
 
     // $custom-checkbox-indicator-border-radius: $border-radius; $custom-checkbox-indicator-border-radius: $custom-checkbox-indicator-border-radius !global; // $border-radius
@@ -610,7 +610,7 @@
     // $custom-checkbox-indicator-indeterminate-bg: $component-active-bg; $custom-checkbox-indicator-indeterminate-bg: $custom-checkbox-indicator-indeterminate-bg !global; // $component-active-bg
     // $custom-checkbox-indicator-indeterminate-color: $custom-control-indicator-checked-color; $custom-checkbox-indicator-indeterminate-color: $custom-checkbox-indicator-indeterminate-color !global; // $custom-control-indicator-checked-color
     // $custom-checkbox-indicator-icon-indeterminate: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'><path stroke='#{$custom-checkbox-indicator-indeterminate-color}' d='M0 2h4'/></svg>"); $custom-checkbox-indicator-icon-indeterminate: $custom-checkbox-indicator-icon-indeterminate !global; // url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'><path stroke='#{$custom-checkbox-indicator-indeterminate-color}' d='M0 2h4'/></svg>")
-    // $custom-checkbox-indicator-indeterminate-box-shadow: none; $custom-checkbox-indicator-indeterminate-box-shadow: $custom-checkbox-indicator-indeterminate-box-shadow !global; // none
+    // $custom-checkbox-indicator-indeterminate-box-shadow: null; $custom-checkbox-indicator-indeterminate-box-shadow: $custom-checkbox-indicator-indeterminate-box-shadow !global; // null
     // $custom-checkbox-indicator-indeterminate-border-color: $custom-checkbox-indicator-indeterminate-bg; $custom-checkbox-indicator-indeterminate-border-color: $custom-checkbox-indicator-indeterminate-border-color !global; // $custom-checkbox-indicator-indeterminate-bg
 
     // $custom-radio-indicator-border-radius: 50%; $custom-radio-indicator-border-radius: $custom-radio-indicator-border-radius !global; // 50%
@@ -716,7 +716,7 @@
     // so you can define only new ones you need
     /*
     // $form-validation-states: (); $form-validation-states: $form-validation-states !global;
-    // stylelint-disable-next-line scss/dollar-variable-default
+
     $form-validation-states: (
     //        "valid": (
     //          "color": $form-feedback-valid-color,
