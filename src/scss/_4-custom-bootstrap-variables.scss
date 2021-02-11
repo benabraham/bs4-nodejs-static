@@ -49,34 +49,34 @@
 
     // Color system
 
-     $white: #fff; $white: $white !global; // #fff
-     $gray-100: #f8f9fa; $gray-100: $gray-100 !global; // #f8f9fa
-     $gray-200: #e9ecef; $gray-200: $gray-200 !global; // #e9ecef
-     $gray-300: #dee2e6; $gray-300: $gray-300 !global; // #dee2e6
-     $gray-400: #ced4da; $gray-400: $gray-400 !global; // #ced4da
-     $gray-500: #adb5bd; $gray-500: $gray-500 !global; // #adb5bd
-     $gray-600: #6c757d; $gray-600: $gray-600 !global; // #6c757d
-     $gray-700: #495057; $gray-700: $gray-700 !global; // #495057
-     $gray-800: #343a40; $gray-800: $gray-800 !global; // #343a40
-     $gray-900: #212529; $gray-900: $gray-900 !global; // #212529
-     $black: #000; $black: $black !global; // #000
+    // $white: #fff; $white: $white !global; // #fff
+    // $gray-100: #f8f9fa; $gray-100: $gray-100 !global; // #f8f9fa
+    // $gray-200: #e9ecef; $gray-200: $gray-200 !global; // #e9ecef
+    // $gray-300: #dee2e6; $gray-300: $gray-300 !global; // #dee2e6
+    // $gray-400: #ced4da; $gray-400: $gray-400 !global; // #ced4da
+    // $gray-500: #adb5bd; $gray-500: $gray-500 !global; // #adb5bd
+    // $gray-600: #6c757d; $gray-600: $gray-600 !global; // #6c757d
+    // $gray-700: #495057; $gray-700: $gray-700 !global; // #495057
+    // $gray-800: #343a40; $gray-800: $gray-800 !global; // #343a40
+    // $gray-900: #212529; $gray-900: $gray-900 !global; // #212529
+    // $black: #000; $black: $black !global; // #000
 
     // uncomment whole block, the following variable uses map-merge(),
     // so you can define only new ones you need
     /*
-
     $grays: (
-    //        "100": $gray-100,
-    //        "200": $gray-200,
-    //        "300": $gray-300,
-    //        "400": $gray-400,
-    //        "500": $gray-500,
-    //        "600": $gray-600,
-    //        "700": $gray-700,
-    //        "800": $gray-800,
-    //        "900": $gray-900
-    ); $grays: $grays !global;
+        //"100": $gray-100,
+        //"200": $gray-200,
+        //"300": $gray-300,
+        //"400": $gray-400,
+        //"500": $gray-500,
+        //"600": $gray-600,
+        //"700": $gray-700,
+        //"800": $gray-800,
+        //"900": $gray-900
+    )); $grays: $grays !global;
     */
+
     // $blue: #007bff; $blue: $blue !global; // #007bff
     // $indigo: #6610f2; $indigo: $indigo !global; // #6610f2
     // $purple: #6f42c1; $purple: $purple !global; // #6f42c1
@@ -91,21 +91,20 @@
     // uncomment whole block, the following variable uses map-merge(),
     // so you can define only new ones you need
     /*
-
     $colors: (
-    //        "blue": $blue,
-    //        "indigo": $indigo,
-    //        "purple": $purple,
-    //        "pink": $pink,
-    //        "red": $red,
-    //        "orange": $orange,
-    //        "yellow": $yellow,
-    //        "green": $green,
-    //        "teal": $teal,
-    //        "cyan": $cyan,
-    //        "white": $white,
-    //        "gray": $gray-600,
-    //        "gray-dark": $gray-800
+        //"blue": $blue,
+        //"indigo": $indigo,
+        //"purple": $purple,
+        //"pink": $pink,
+        //"red": $red,
+        //"orange": $orange,
+        //"yellow": $yellow,
+        //"green": $green,
+        //"teal": $teal,
+        //"cyan": $cyan,
+        //"white": $white,
+        //"gray": $gray-600,
+        //"gray-dark": $gray-800
     ); $colors: $colors !global;
     */
 
@@ -121,16 +120,15 @@
     // uncomment whole block, the following variable uses map-merge(),
     // so you can define only new ones you need
     /*
-
     $theme-colors: (
-    //        "primary": $primary,
-    //        "secondary": $secondary,
-    //        "success": $success,
-    //        "info": $info,
-    //        "warning": $warning,
-    //        "danger": $danger,
-    //        "light": $light,
-    //        "dark": $dark
+        //"primary": $primary,
+        //"secondary": $secondary,
+        //"success": $success,
+        //"info": $info,
+        //"warning": $warning,
+        //"danger": $danger,
+        //"light": $light,
+        //"dark": $dark
     ); $theme-colors: $theme-colors !global;
     */
 
@@ -150,11 +148,11 @@
     // so you can define only new ones you need
     /*
     $escaped-characters: (
-    //        ("<", "%3c"),
-    //        (">", "%3e"),
-    //        ("#", "%23"),
-    //        ("(", "%28"),
-    //        (")", "%29"),
+        //("<", "%3c"),
+        //(">", "%3e"),
+        //("#", "%23"),
+        //("(", "%28"),
+        //(")", "%29"),
     ); $escaped-characters: $escaped-characters !global;
     */
 
@@ -184,17 +182,17 @@
     // You can add more entries to the $spacers map, should you need more variation.
 
     // $spacer: 1rem; $spacer: $spacer !global; // 1rem
+
     // uncomment whole block, the following variable uses map-merge(),
     // so you can define only new ones you need
     /*
-
     $spacers: (
-    //        0: 0,
-    //        1: ($spacer * .25),
-    //        2: ($spacer * .5),
-    //        3: $spacer,
-    //        4: ($spacer * 1.5),
-    //        5: ($spacer * 3)
+        //0: 0,
+        //1: ($spacer * .25),
+        //2: ($spacer * .5),
+        //3: $spacer,
+        //4: ($spacer * 1.5),
+        //5: ($spacer * 3)
     ); $spacers: $spacers !global;
     */
 
@@ -202,13 +200,12 @@
     // uncomment whole block, the following variable uses map-merge(),
     // so you can define only new ones you need
     /*
-
     $sizes: (
-    //        25: 25%,
-    //        50: 50%,
-    //        75: 75%,
-    //        100: 100%,
-    //        auto: auto
+        //25: 25%,
+        //50: 50%,
+        //75: 75%,
+        //100: 100%,
+        //auto: auto
     ); $sizes: $sizes !global;
     */
 
@@ -242,6 +239,9 @@
     //
     // Define the minimum dimensions at which your layout will change,
     // adapting to different screen sizes, for use in media queries.
+
+    // Define the minimum dimensions at which your layout will change,
+    // adapting to different screen sizes, for use in media queries.
     /*
     $grid-breakpoints: (
     //      xs: 0,
@@ -271,7 +271,6 @@
     @include _assert-ascending($container-max-widths, "$container-max-widths");
     */
 
-
     // Grid columns
     //
     // Set the number of columns and specify the width of the gutters.
@@ -279,6 +278,7 @@
     // $grid-columns: 12; $grid-columns: $grid-columns !global; // 12
     // $grid-gutter-width: 30px; $grid-gutter-width: $grid-gutter-width !global; // 30px
     // $grid-row-columns: 6; $grid-row-columns: $grid-row-columns !global; // 6
+
 
     // Components
     //
@@ -315,10 +315,10 @@
     // so you can define only new ones you need
     /*
     $embed-responsive-aspect-ratios: (
-    //        (21 9),
-    //        (16 9),
-    //        (4 3),
-    //        (1 1),
+        //(21 9),
+        //(16 9),
+        //(4 3),
+        //(1 1),
     ); $embed-responsive-aspect-ratios: $embed-responsive-aspect-ratios !global;
     */
 
@@ -327,7 +327,7 @@
     // Font, line-height, and color for body text, headings, and more.
 
     // stylelint-disable value-keyword-case
-    // $font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; $font-family-sans-serif: $font-family-sans-serif !global; // -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+    // $font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; $font-family-sans-serif: $font-family-sans-serif !global; // -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
     // $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; $font-family-monospace: $font-family-monospace !global; // SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
     // $font-family-base: $font-family-sans-serif; $font-family-base: $font-family-base !global; // $font-family-sans-serif
     // stylelint-enable value-keyword-case
@@ -416,6 +416,7 @@
 
     // $table-head-bg: $gray-200; $table-head-bg: $table-head-bg !global; // $gray-200
     // $table-head-color: $gray-700; $table-head-color: $table-head-color !global; // $gray-700
+    // $table-th-font-weight: null; $table-th-font-weight: $table-th-font-weight !global; // null
 
     // $table-dark-color: $white; $table-dark-color: $table-dark-color !global; // $white
     // $table-dark-bg: $gray-800; $table-dark-bg: $table-dark-bg !global; // $gray-800
@@ -593,7 +594,7 @@
     // $custom-control-indicator-checked-color: $component-active-color; $custom-control-indicator-checked-color: $custom-control-indicator-checked-color !global; // $component-active-color
     // $custom-control-indicator-checked-bg: $component-active-bg; $custom-control-indicator-checked-bg: $custom-control-indicator-checked-bg !global; // $component-active-bg
     // $custom-control-indicator-checked-disabled-bg: rgba(theme-color("primary"), .5); $custom-control-indicator-checked-disabled-bg: $custom-control-indicator-checked-disabled-bg !global; // rgba(theme-color("primary"), .5)
-    // $custom-control-indicator-checked-box-shadow: null; $custom-control-indicator-checked-box-shadow: null $custom-control-indicator-checked-box-shadow !global; // null
+    // $custom-control-indicator-checked-box-shadow: null; $custom-control-indicator-checked-box-shadow: $custom-control-indicator-checked-box-shadow !global; // null
     // $custom-control-indicator-checked-border-color: $custom-control-indicator-checked-bg; $custom-control-indicator-checked-border-color: $custom-control-indicator-checked-border-color !global; // $custom-control-indicator-checked-bg
 
     // $custom-control-indicator-focus-box-shadow: $input-focus-box-shadow; $custom-control-indicator-focus-box-shadow: $custom-control-indicator-focus-box-shadow !global; // $input-focus-box-shadow
@@ -635,7 +636,7 @@
     // $custom-select-bg-size: 8px 10px; $custom-select-bg-size: $custom-select-bg-size !global; // 8px 10px // In pixels because image dimensions
     // $custom-select-indicator-color: $gray-800; $custom-select-indicator-color: $custom-select-indicator-color !global; // $gray-800
     // $custom-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'><path fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>"); $custom-select-indicator: $custom-select-indicator !global; // url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'><path fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>")
-    // $custom-select-background: escape-svg($custom-select-indicator) no-repeat right $custom-select-padding-x center / $custom-select-bg-size; $custom-select-background: $custom-select-background !global; // escape-svg($custom-select-indicator) no-repeat right $custom-select-padding-x center / $custom-select-bg-size // Used so we can have multiple background elements (e.g., arrow and feedback icon)
+    // $custom-select-background: escape-svg($custom-select-indicator) right $custom-select-padding-x center / $custom-select-bg-size no-repeat; $custom-select-background: $custom-select-background !global; // escape-svg($custom-select-indicator) right $custom-select-padding-x center / $custom-select-bg-size no-repeat // Used so we can have multiple background elements (e.g., arrow and feedback icon)
 
     // $custom-select-feedback-icon-padding-right: add(1em * .75, (2 * $custom-select-padding-y * .75) + $custom-select-padding-x + $custom-select-indicator-padding); $custom-select-feedback-icon-padding-right: $custom-select-feedback-icon-padding-right !global; // add(1em * .75, (2 * $custom-select-padding-y * .75) + $custom-select-padding-x + $custom-select-indicator-padding)
     // $custom-select-feedback-icon-position: center right ($custom-select-padding-x + $custom-select-indicator-padding); $custom-select-feedback-icon-position: $custom-select-feedback-icon-position !global; // center right ($custom-select-padding-x + $custom-select-indicator-padding)
@@ -712,20 +713,21 @@
     // $form-feedback-icon-invalid-color: $form-feedback-invalid-color; $form-feedback-icon-invalid-color: $form-feedback-icon-invalid-color !global; // $form-feedback-invalid-color
     // $form-feedback-icon-invalid: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='#{$form-feedback-icon-invalid-color}' viewBox='0 0 12 12'><circle cx='6' cy='6' r='4.5'/><path stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/><circle cx='6' cy='8.2' r='.6' fill='#{$form-feedback-icon-invalid-color}' stroke='none'/></svg>"); $form-feedback-icon-invalid: $form-feedback-icon-invalid !global; // url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='#{$form-feedback-icon-invalid-color}' viewBox='0 0 12 12'><circle cx='6' cy='6' r='4.5'/><path stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/><circle cx='6' cy='8.2' r='.6' fill='#{$form-feedback-icon-invalid-color}' stroke='none'/></svg>")
 
+    // $form-validation-states: (); $form-validation-states: $form-validation-states !global; // ()
     // uncomment whole block, the following variable uses map-merge(),
     // so you can define only new ones you need
     /*
     // $form-validation-states: (); $form-validation-states: $form-validation-states !global;
 
     $form-validation-states: (
-    //        "valid": (
-    //          "color": $form-feedback-valid-color,
-    //          "icon": $form-feedback-icon-valid
-    //        ),
-    //        "invalid": (
-    //          "color": $form-feedback-invalid-color,
-    //          "icon": $form-feedback-icon-invalid
-    //        ),
+        //"valid": (
+        //  "color": $form-feedback-valid-color,
+        //  "icon": $form-feedback-icon-valid
+        //),
+        //"invalid": (
+        //  "color": $form-feedback-invalid-color,
+        //  "icon": $form-feedback-icon-invalid
+        //),
     ); $form-validation-states: $form-validation-states !global;
     */
 
@@ -783,6 +785,8 @@
     // $navbar-toggler-font-size: $font-size-lg; $navbar-toggler-font-size: $navbar-toggler-font-size !global; // $font-size-lg
     // $navbar-toggler-border-radius: $btn-border-radius; $navbar-toggler-border-radius: $navbar-toggler-border-radius !global; // $btn-border-radius
 
+    // $navbar-nav-scroll-max-height: 75vh; $navbar-nav-scroll-max-height: $navbar-nav-scroll-max-height !global; // 75vh
+
     // $navbar-dark-color: rgba($white, .5); $navbar-dark-color: $navbar-dark-color !global; // rgba($white, .5)
     // $navbar-dark-hover-color: rgba($white, .75); $navbar-dark-hover-color: $navbar-dark-hover-color !global; // rgba($white, .75)
     // $navbar-dark-active-color: $white; $navbar-dark-active-color: $navbar-dark-active-color !global; // $white
@@ -808,6 +812,7 @@
     // Dropdown menu container and contents.
 
     // $dropdown-min-width: 10rem; $dropdown-min-width: $dropdown-min-width !global; // 10rem
+    // $dropdown-padding-x: 0; $dropdown-padding-x: $dropdown-padding-x !global; // 0
     // $dropdown-padding-y: .5rem; $dropdown-padding-y: $dropdown-padding-y !global; // .5rem
     // $dropdown-spacer: .125rem; $dropdown-spacer: $dropdown-spacer !global; // .125rem
     // $dropdown-font-size: $font-size-base; $dropdown-font-size: $dropdown-font-size !global; // $font-size-base
@@ -823,12 +828,12 @@
 
     // $dropdown-link-color: $gray-900; $dropdown-link-color: $dropdown-link-color !global; // $gray-900
     // $dropdown-link-hover-color: darken($gray-900, 5%); $dropdown-link-hover-color: $dropdown-link-hover-color !global; // darken($gray-900, 5%)
-    // $dropdown-link-hover-bg: $gray-100; $dropdown-link-hover-bg: $dropdown-link-hover-bg !global; // $gray-100
+    // $dropdown-link-hover-bg: $gray-200; $dropdown-link-hover-bg: $dropdown-link-hover-bg !global; // $gray-200
 
     // $dropdown-link-active-color: $component-active-color; $dropdown-link-active-color: $dropdown-link-active-color !global; // $component-active-color
     // $dropdown-link-active-bg: $component-active-bg; $dropdown-link-active-bg: $dropdown-link-active-bg !global; // $component-active-bg
 
-    // $dropdown-link-disabled-color: $gray-600; $dropdown-link-disabled-color: $dropdown-link-disabled-color !global; // $gray-600
+    // $dropdown-link-disabled-color: $gray-500; $dropdown-link-disabled-color: $dropdown-link-disabled-color !global; // $gray-500
 
     // $dropdown-item-padding-y: .25rem; $dropdown-item-padding-y: $dropdown-item-padding-y !global; // .25rem
     // $dropdown-item-padding-x: 1.5rem; $dropdown-item-padding-x: $dropdown-item-padding-x !global; // 1.5rem
@@ -867,6 +872,8 @@
     // $pagination-disabled-bg: $white; $pagination-disabled-bg: $pagination-disabled-bg !global; // $white
     // $pagination-disabled-border-color: $gray-300; $pagination-disabled-border-color: $pagination-disabled-border-color !global; // $gray-300
 
+    // $pagination-border-radius-sm: $border-radius-sm; $pagination-border-radius-sm: $pagination-border-radius-sm !global; // $border-radius-sm
+    // $pagination-border-radius-lg: $border-radius-lg; $pagination-border-radius-lg: $pagination-border-radius-lg !global; // $border-radius-lg
 
     // Jumbotron
 
@@ -993,6 +1000,7 @@
 
     // Margin between elements in footer, must be lower than or equal to 2 * $modal-inner-padding
     // $modal-footer-margin-between: .5rem; $modal-footer-margin-between: $modal-footer-margin-between !global; // .5rem
+
     // $modal-dialog-margin: .5rem; $modal-dialog-margin: $modal-dialog-margin !global; // .5rem
     // $modal-dialog-margin-y-sm-up: 1.75rem; $modal-dialog-margin-y-sm-up: $modal-dialog-margin-y-sm-up !global; // 1.75rem
 
@@ -1102,6 +1110,7 @@
     // Breadcrumbs
 
     // $breadcrumb-font-size: null; $breadcrumb-font-size: $breadcrumb-font-size !global; // null
+
     // $breadcrumb-padding-y: .75rem; $breadcrumb-padding-y: $breadcrumb-padding-y !global; // .75rem
     // $breadcrumb-padding-x: 1rem; $breadcrumb-padding-x: $breadcrumb-padding-x !global; // 1rem
     // $breadcrumb-item-padding: .5rem; $breadcrumb-item-padding: $breadcrumb-item-padding !global; // .5rem
@@ -1183,6 +1192,7 @@
     // $overflows: auto, hidden; $overflows: $overflows !global; // auto, hidden
     // $positions: static, relative, absolute, fixed, sticky; $positions: $positions !global; // static, relative, absolute, fixed, sticky
     // $user-selects: all, auto, none; $user-selects: $user-selects !global; // all, auto, none
+
 
     // Printing
 
