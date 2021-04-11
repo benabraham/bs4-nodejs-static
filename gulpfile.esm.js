@@ -26,33 +26,29 @@ const htmlCleanup = () => del('dist/**/*.html');
 const cssCleanup = () => del('dist/*.{css,css.map}');
 
 // delete static files
-const staticCleanup = () => {
-    return del(
+const staticCleanup = () =>
+    del(
         [
             'dist/**/*', // delete all files from /dist/
             '!dist/**/*.{html,css,css.map}', // except HTML, CSS and CSS map files
         ],
         { onlyFiles: true } // do not delete folders (would delete all folders otherwise)
     );
-};
 
 // functions that generate files
 
 // compile twig templates to html files
-const twigCompile = () => {
-    return (
-        src('src/templates/**/[^_]*.twig')
-            // import data from data.json
-            .pipe(twig({ cache: false, data: JSON.parse(String(readFileSync('src/data.json'))) }))
-            .pipe(dest('./dist/')) // put compiled html into dist folder
-            // tell Browsersync to reload after compiling finishes
-            .on('end', () => browserSync.reload())
-    );
-};
+const twigCompile = () =>
+    src('src/templates/**/[^_]*.twig')
+        // import data from data.json
+        .pipe(twig({ cache: false, data: JSON.parse(String(readFileSync('src/data.json'))) }))
+        .pipe(dest('./dist/')) // put compiled html into dist folder
+        // tell Browsersync to reload after compiling finishes
+        .on('end', () => browserSync.reload())
 
 // create and process CSS
-const sassCompile = () => {
-    return src('src/scss/index.scss') // this is the source of for compilation
+const sassCompile = () =>
+    src('src/scss/index.scss') // this is the source of for compilation
         .pipe(sourcemaps.init()) // initalizes a sourcemap
         .pipe(sass.sync().on('error', sass.logError)) // compile SCSS to CSS and also tell us about a problem if happens
         .pipe(
@@ -68,11 +64,10 @@ const sassCompile = () => {
         .pipe(sourcemaps.write('./')) // writes the sourcemap
         .pipe(dest('./dist')) // destination of the resulting CSS
         .pipe(browserSync.stream()); // tell browsersync to inject compiled CSS
-};
 
 // remove unused CSS (classes not used in generated HTML)
-const removeUnusedCss = () => {
-    return src('dist/index.css')
+const removeUnusedCss = () =>
+    src('dist/index.css')
         .pipe(
             postcss([
                 uncss({
@@ -83,17 +78,13 @@ const removeUnusedCss = () => {
             ])
         )
         .pipe(dest('dist'));
-};
 
 // copy all files from /src/static/ to /dist/static/
-const copyStatic = () => {
-    return (
-        src('src/static/**/*')
-            .pipe(dest('dist'))
-            // tell Browsersync to reload after copying finishes
-            .on('end', () => browserSync.reload())
-    );
-};
+const copyStatic = () =>
+    src('src/static/**/*')
+        .pipe(dest('dist'))
+        // tell Browsersync to reload after copying finishes
+        .on('end', () => browserSync.reload())
 
 // development with automatic refreshing after changes to CSS, templates or static files
 const startBrowsersync = () => {
