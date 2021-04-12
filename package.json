@@ -18,11 +18,11 @@
     "gulp-postcss": "^9.0.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-twig": "^1.2.0",
-    "postcss": "^8.2.8",
+    "postcss": "^8.2.10",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-uncss": "^0.17.0",
     "prettier": "2.2.1",
-    "surge": "^0.22.1",
+    "surge": "^0.23.0",
     "uncss": "^0.17.3"
   },
   "scripts": {
@@ -46,7 +46,6 @@
   "author": "Daniel Srb",
   "license": "MIT",
   "description": "A basic template to start a website based on Bootstrap",
-  "dependencies": {},
   "browserslist": [
     ">= 1%",
     "last 1 major version",
