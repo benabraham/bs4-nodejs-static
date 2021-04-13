@@ -9,7 +9,7 @@ const { series, parallel, src, dest, watch } = require('gulp'),
     flexbugsFixes = require('postcss-flexbugs-fixes'),
     uncss = require('postcss-uncss'),
     csso = require('gulp-csso'),
-    twig = require('gulp-twig'),
+    nunjucks = require('gulp-nunjucks'),
     browserSync = require('browser-sync').create();
 
 // DEFINE FUNCTIONS
@@ -36,10 +36,10 @@ const staticCleanup = () => del(
 
 // 2) functions that generate files
 
-// compile twig templates to html files
-const twigCompile = () => src('src/templates/**/[^_]*.twig')
+// compile Nunjucks templates to html files
+const htmlCompile = () => src('src/templates/**/[^_]*.njk')
     // import data from data.json
-    .pipe(twig({ cache: false, data: JSON.parse(String(readFileSync('src/data.json'))) }))
+    .pipe(nunjucks.compile(JSON.parse(String(readFileSync('src/data.json')))))
     .pipe(dest('./dist/')); // put compiled html into dist folder
 
 // create and process CSS
@@ -112,7 +112,7 @@ const watchFiles = () => {
 
 // COMPOSE TASKS
 
-const processHtml = series(htmlCleanup, twigCompile);
+const processHtml = series(htmlCleanup, htmlCompile);
 
 const processCss = series(cssCleanup, sassCompile);
 
@@ -125,14 +125,14 @@ const processStatic = series(staticCleanup, copyStatic);
 // development with automatic refreshing
 exports.develop = series(
     allCleanup,
-    parallel(twigCompile, sassCompile, copyStatic),
+    parallel(htmlCompile, sassCompile, copyStatic),
     parallel(startBrowsersync, watchFiles)
 );
 
 // build everything for production
 exports.build = series(
     allCleanup,
-    twigCompile,
+    htmlCompile,
     parallel(sassCompile, copyStatic),
     removeUnusedCss
 );

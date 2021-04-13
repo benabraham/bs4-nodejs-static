@@ -11,7 +11,7 @@ Includes:
 -   **UnCSS**: removes unused styles from CSS
 -   **Flexbugs fixes**: automatically fixes some of the [flexbugs](https://github.com/philipwalton/flexbugs)
 -   **CSSO**: CSS minifier with structural optimizations
--   **Twig.js**: JavaScript implementation of the Twig PHP templating language
+-   **Nunjucks**: templating language by Mozilla
 -   **Surge.sh**: deploy static websites easily and for free
 
 ## First time installation
@@ -52,17 +52,15 @@ npm run build
 
 You don't know _Scss_ syntax or don't want to use it? Just use plain CSS in `src/scss/_base.scss`.
 
-## HTML (Twig templates)
+## HTML (Nunjucks templates)
 
-HTML is generated from [Twig.js](https://github.com/twigjs/twig.js/) templates (JavaScript impementation of Twig templating language) in `src/templates`.
+HTML is generated from [Nunjucks](https://mozilla.github.io/nunjucks/) templates in `src/templates`.
 
-You don't need to leverage the power of templates. You can just create plain HTML files with `*.twig` extension.
+You don't need to leverage the power of templates. You can just create plain HTML files with `*.njk` extension.
 
 If you don't want a template to be turned into HTML file start it with `_`. Typically these are templates used for _include_ or _extend_.
 
-Documentation for [Twig](https://twig.symfony.com/doc/2.x/templates.html).
-
-_Warning: [Twig.js doesn't implement 100% of Twig](https://github.com/twigjs/twig.js/wiki/Implementation-Notes)._
+[Documentation for Nunjucks](https://mozilla.github.io/nunjucks/templating.html).
 
 If you need some data to be available in all templates, use `templates/data.json` for that.
 
