@@ -713,12 +713,9 @@
     // $form-feedback-icon-invalid-color: $form-feedback-invalid-color; $form-feedback-icon-invalid-color: $form-feedback-icon-invalid-color !global; // $form-feedback-invalid-color
     // $form-feedback-icon-invalid: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='#{$form-feedback-icon-invalid-color}' viewBox='0 0 12 12'><circle cx='6' cy='6' r='4.5'/><path stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/><circle cx='6' cy='8.2' r='.6' fill='#{$form-feedback-icon-invalid-color}' stroke='none'/></svg>"); $form-feedback-icon-invalid: $form-feedback-icon-invalid !global; // url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='#{$form-feedback-icon-invalid-color}' viewBox='0 0 12 12'><circle cx='6' cy='6' r='4.5'/><path stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/><circle cx='6' cy='8.2' r='.6' fill='#{$form-feedback-icon-invalid-color}' stroke='none'/></svg>")
 
-    // $form-validation-states: (); $form-validation-states: $form-validation-states !global; // ()
     // uncomment whole block, the following variable uses map-merge(),
     // so you can define only new ones you need
     /*
-    // $form-validation-states: (); $form-validation-states: $form-validation-states !global;
-
     $form-validation-states: (
         //"valid": (
         //  "color": $form-feedback-valid-color,
