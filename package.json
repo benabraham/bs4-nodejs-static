@@ -45,7 +45,7 @@
   },
   "author": "Daniel Srb",
   "license": "MIT",
-  "description": "A basic template to start a website based on Bootstrap",
+  "description": "A basic template to start a website based on Bootstrap 4",
   "browserslist": [
     ">= 1%",
     "last 1 major version",
