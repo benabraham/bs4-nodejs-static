@@ -1,3 +1,5 @@
+**This project has been archived and is no longer maintained.**
+
 # A basic template to develop a website based on Bootstrap 4
 
 Includes:
